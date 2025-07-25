@@ -15,152 +15,158 @@
     </style>
   </head>
 
-  <body>
-    <nav id="navbar">
-      <button id="menu-toggle">Toggle Menu</button>
-      <div id="menu" class="hidden">Menu Content</div>
-    </nav>
-    <!-- Konten halaman di sini -->
-    <div class="relative overflow-hidden bg-gradient-to-b from-[#48EBFC] to-[#044877]">
-      <img src="./assets/explore/upper-light.png" class="w-full object-cover -mt-10" />
-      <img
-        src="./assets/explore/elfest-recap-2024.png"
-        class="absolute top-12 left-1/2 -translate-x-1/2 w-96 object-cover"
-      />
-      <!-- Elfest Recap 2024 -->
-      <div class="relative -mt-16">
-        <div class="aspect-video w-full sm:max-w-md mx-auto relative z-10 sm:px-10 px-8">
-          <video width="100%" height="100%" controls autoplay muted>
-            <source src="./assets/explore/elfest.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <img
-          src="./assets/explore/kerang.png"
-          class="absolute bottom-0 translate-y-1/3 left-1/2 -translate-x-1/2 sm:max-w-[465px] object-cover sm:p-10 px-5"
-        />
-      </div>
-      <!-- Elfest Recap 2024 -->
-      <!-- ELFEST AMBIENCE 2024 -->
-      <div class="mt-28 relative">
-        <img
-          src="./assets/explore/jellyfish.png"
-          class="absolute top-0 -translate-y-10 right-2 w-24 object-cover sm:p-10 px-5"
-        />
-        <img src="./assets/explore/elfest-ambience-2024.png" alt="Elfest 2024's Ambiences" class="w-96 mb-10 mx-auto" />
-        <div class="w-full sm:max-w-2xl max-w-xs mx-auto px-4 aspect-video">
-          <div class="relative z-10">
-            <!-- Carousel container -->
-            <div class="overflow-hidden rounded-lg shadow-lg">
-              <div id="carousel" class="flex transition-transform duration-500">
-                <img src="./assets/carousel-2024/1.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
-                <img src="./assets/carousel-2024/2.jpg" class="w-full flex-shrink-0" alt="Slide 2" />
-                <img src="./assets/carousel-2024/3.jpg" class="w-full flex-shrink-0" alt="Slide 3" />
-                <img src="./assets/carousel-2024/4.jpg" class="w-full flex-shrink-0" alt="Slide 4" />
-                <img src="./assets/carousel-2024/5.jpg" class="w-full flex-shrink-0" alt="Slide 5" />
-                <img src="./assets/carousel-2024/6.jpg" class="w-full flex-shrink-0" alt="Slide 6" />
-                <img src="./assets/carousel-2024/7.jpg" class="w-full flex-shrink-0" alt="Slide 7" />
-              </div>
-            </div>
-
-            <!-- Navigation arrows -->
-            <button
-              id="prevBtn"
-              class="absolute top-1/2 -left-1 sm:-left-3 transform -translate-y-1/2 -translate-x-full p-1 focus:outline-none"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              id="nextBtn"
-              class="absolute top-1/2 -right-1 sm:-right-3 transform -translate-y-1/2 translate-x-full p-1 focus:outline-none"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+  <body class="bg-gradient-to-b from-[#48EBFC] to-[#044877]">
+    <div class="relative">
+      <nav id="navbar">
+        <button id="menu-toggle">Toggle Menu</button>
+        <div id="menu" class="hidden">Menu Content</div>
+      </nav>
+      <!-- Konten halaman di sini -->
+      <div class="relative overflow-hidden bg-gradient-to-b from-[#48EBFC] to-[#044877]">
+        <img src="./assets/explore/upper-light.png" class="w-full absolute object-cover -mt-10" />
+        <img src="./assets/explore/elfest-recap-2024.png" class="w-96 mx-auto relative mt-16 mb-10" />
+        <!-- Elfest Recap 2024 -->
+        <div class="relative">
+          <div class="aspect-video w-full sm:max-w-md mx-auto relative z-10 sm:px-10 px-8">
+            <video width="100%" height="100%" controls autoplay muted>
+              <source src="./assets/explore/elfest.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
+          <img
+            src="./assets/explore/kerang.png"
+            class="absolute bottom-0 translate-y-1/3 left-1/2 -translate-x-1/2 sm:max-w-[465px] object-cover sm:p-10 px-5"
+          />
         </div>
-        <img
-          src="./assets/explore/tumpukan-kertas.png"
-          class="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 max-w-sm sm:max-w-2xl object-cover sm:p-10 px-5"
-        />
-      </div>
-      <!-- ELFEST AMBIENCE 2024 -->
-
-      <!-- Elfest Recap 2024 -->
-      <div class="relative mt-28">
-        <div class="mb-10 relative w-fit mx-auto">
-          <img src="./assets/explore/elfest-recap-2025.png" class="mx-auto w-96" />
-          <img src="./assets/explore/bubble-right.png" class="absolute -right-5 w-20 top-0 -translate-y-5" />
-          <img src="./assets/explore/bubble-left.png" class="absolute -left-5 w-20 top-0 -translate-y-5" />
-        </div>
-
-        <div class="aspect-video w-full sm:max-w-md mx-auto relative z-10 sm:px-10 px-8">
-          <video width="100%" height="100%" controls autoplay muted>
-            <source src="./assets/explore/elfest.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <img
-          src="./assets/explore/kerang.png"
-          class="absolute bottom-0 translate-y-1/3 left-1/2 -translate-x-1/2 sm:max-w-[465px] object-cover sm:p-10 px-5"
-        />
-      </div>
-      <!-- Elfest Recap 2024 -->
-
-      <!-- ELFEST AMBIENCE 2025 -->
-      <div class="mt-28 relative">
-        <img
-          src="./assets/explore/jellyfish.png"
-          class="absolute top-0 -translate-y-10 left-2 w-24 object-cover sm:p-10 px-5"
-        />
-        <img src="./assets/explore/elfest-ambience-2025.png" alt="Elfest 2025's Ambiences" class="w-96 mb-10 mx-auto" />
-        <div class="w-full sm:max-w-2xl max-w-xs mx-auto px-4 aspect-video">
-          <div class="relative z-10">
-            <!-- Carousel container -->
-            <div class="overflow-hidden rounded-lg shadow-lg">
-              <div id="carousel" class="flex transition-transform duration-500">
-                <img src="./assets/carousel-2025/1.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
-                <img src="./assets/carousel-2025/2.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
-                <img src="./assets/carousel-2025/3.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
-                <img src="./assets/carousel-2025/4.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
-                <img src="./assets/carousel-2025/5.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
-                <img src="./assets/carousel-2025/6.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
-                <img src="./assets/carousel-2025/7.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+        <!-- Elfest Recap 2024 -->
+        <!-- ELFEST AMBIENCE 2024 -->
+        <div class="mt-28 relative max-w-sm mx-auto">
+          <img
+            src="./assets/explore/jellyfish.png"
+            class="absolute top-0 -translate-y-10 right-2 w-24 object-cover sm:p-10 px-5 sm:w-32 sm:-right-32"
+          />
+          <img
+            src="./assets/explore/elfest-ambience-2024.png"
+            alt="Elfest 2024's Ambiences"
+            class="w-96 mb-10 mx-auto"
+          />
+          <div class="w-full sm:max-w-2xl max-w-xs mx-auto px-4 aspect-video">
+            <div class="relative z-10">
+              <!-- Carousel container -->
+              <div class="overflow-hidden rounded-lg shadow-lg">
+                <div id="carousel" class="flex transition-transform duration-500">
+                  <img src="./assets/carousel-2024/1.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                  <img src="./assets/carousel-2024/2.jpg" class="w-full flex-shrink-0" alt="Slide 2" />
+                  <img src="./assets/carousel-2024/3.jpg" class="w-full flex-shrink-0" alt="Slide 3" />
+                  <img src="./assets/carousel-2024/4.jpg" class="w-full flex-shrink-0" alt="Slide 4" />
+                  <img src="./assets/carousel-2024/5.jpg" class="w-full flex-shrink-0" alt="Slide 5" />
+                  <img src="./assets/carousel-2024/6.jpg" class="w-full flex-shrink-0" alt="Slide 6" />
+                  <img src="./assets/carousel-2024/7.jpg" class="w-full flex-shrink-0" alt="Slide 7" />
+                </div>
               </div>
+
+              <!-- Navigation arrows -->
+              <button
+                id="prevBtn"
+                class="absolute top-1/2 -left-1 sm:-left-3 transform -translate-y-1/2 -translate-x-full p-1 focus:outline-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                id="nextBtn"
+                class="absolute top-1/2 -right-1 sm:-right-3 transform -translate-y-1/2 translate-x-full p-1 focus:outline-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
-
-            <!-- Navigation arrows -->
-            <button
-              id="prevBtn"
-              class="absolute top-1/2 -left-1 sm:-left-3 transform -translate-y-1/2 -translate-x-full p-1 focus:outline-none"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              id="nextBtn"
-              class="absolute top-1/2 -right-1 sm:-right-3 transform -translate-y-1/2 translate-x-full p-1 focus:outline-none"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
           </div>
+          <img
+            src="./assets/explore/tumpukan-kertas.png"
+            class="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 max-w-sm sm:max-w-2xl object-cover sm:p-10 px-5"
+          />
         </div>
-        <img
-          src="./assets/explore/tumpukan-kertas.png"
-          class="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 max-w-sm sm:max-w-2xl object-cover sm:p-10 px-5"
-        />
-      </div>
-      <!-- ELFEST AMBIENCE 2025 -->
+        <!-- ELFEST AMBIENCE 2024 -->
 
-      <img src="./assets/explore/bottom-treasure.png" class="" />
+        <!-- Elfest Recap 2025 -->
+        <div class="relative mt-28 sm:mt-48">
+          <div class="mb-10 relative w-fit mx-auto">
+            <img src="./assets/explore/elfest-recap-2025.png" class="mx-auto w-96" />
+            <img src="./assets/explore/bubble-right.png" class="absolute -right-5 w-20 top-0 -translate-y-5" />
+            <img src="./assets/explore/bubble-left.png" class="absolute -left-5 w-20 top-0 -translate-y-5" />
+          </div>
 
-      <!-- <div class="mt-10 flex justify-center flex-col gap-2 pb-8 relative">
+          <div class="aspect-video w-full sm:max-w-md mx-auto relative z-10 sm:px-10 px-8">
+            <video width="100%" height="100%" controls autoplay muted>
+              <source src="./assets/explore/elfest.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <img
+            src="./assets/explore/kerang.png"
+            class="absolute bottom-0 translate-y-1/3 left-1/2 -translate-x-1/2 sm:max-w-[465px] object-cover sm:p-10 px-5"
+          />
+        </div>
+        <!-- Elfest Recap 2025 -->
+
+        <!-- ELFEST AMBIENCE 2025 -->
+        <div class="mt-28 relative max-w-sm mx-auto">
+          <img
+            src="./assets/explore/jellyfish.png"
+            class="absolute top-0 -translate-y-10 left-2 w-24 object-cover sm:p-10 px-5"
+          />
+          <img
+            src="./assets/explore/elfest-ambience-2025.png"
+            alt="Elfest 2025's Ambiences"
+            class="w-96 mb-10 mx-auto"
+          />
+          <div class="w-full sm:max-w-2xl max-w-xs mx-auto px-4 aspect-video">
+            <div class="relative z-10">
+              <!-- Carousel container -->
+              <div class="overflow-hidden rounded-lg shadow-lg">
+                <div id="carousel" class="flex transition-transform duration-500">
+                  <img src="./assets/carousel-2025/1.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                  <img src="./assets/carousel-2025/2.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                  <img src="./assets/carousel-2025/3.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                  <img src="./assets/carousel-2025/4.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                  <img src="./assets/carousel-2025/5.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                  <img src="./assets/carousel-2025/6.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                  <img src="./assets/carousel-2025/7.jpg" class="w-full flex-shrink-0" alt="Slide 1" />
+                </div>
+              </div>
+
+              <!-- Navigation arrows -->
+              <button
+                id="prevBtn"
+                class="absolute top-1/2 -left-1 sm:-left-3 transform -translate-y-1/2 -translate-x-full p-1 focus:outline-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                id="nextBtn"
+                class="absolute top-1/2 -right-1 sm:-right-3 transform -translate-y-1/2 translate-x-full p-1 focus:outline-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <img
+            src="./assets/explore/tumpukan-kertas.png"
+            class="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 max-w-sm sm:max-w-2xl object-cover sm:p-10 px-5"
+          />
+        </div>
+        <!-- ELFEST AMBIENCE 2025 -->
+
+        <img src="./assets/explore/bottom-treasure.png" class="max-w-sm mx-auto" />
+
+        <!-- <div class="mt-10 flex justify-center flex-col gap-2 pb-8 relative">
         <img src="./assets/explore/bottom-grass.png" draggable="false" class="left-0 right-0 bottom-0 absolute" />
         <img src="./assets/explore/buy-your-tiket.png" alt="Buy Your Ticket Now" class="sm:max-w-md max-w-xs mx-auto" />
         <a
@@ -171,8 +177,9 @@
           CLICK HERE
         </a>
       </div> -->
+      </div>
+      <div id="footer" class="absolute bottom-0 w-full max-w-sm z-50 sm:left-1/2 sm:-translate-x-1/2"></div>
     </div>
-    <div id="footer"></div>
     <script src="script.js"></script>
     <script>
       const carousel = document.getElementById('carousel');
