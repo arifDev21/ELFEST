@@ -29,7 +29,7 @@ function setupNavbarFunctionality() {
 
 
 function handleTickInit(tick) {
-    const targetDate = new Date('2025-04-26T00:00:00');
+    const targetDate = new Date('2026-04-26T00:00:00');
     Tick.helper.interval(function () {
         var now = new Date();
         var timeDiff = targetDate - now;
