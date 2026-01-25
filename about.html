@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .background-base {
-        background-image: url("assets/about/background.png");
+        background-image: url("assets/about/2026/background.png");
         background-size: cover;
       }
 
@@ -31,63 +31,108 @@
     />
   </head>
 
-  <body class="min-h-screen flex flex-col relative">
+  <body class="min-h-screen flex flex-col relative bg-[#2D1290]">
     <nav id="navbar" class="z-50">
       <!-- <button id="menu-toggle">Toggle Menu</button> -->
       <!-- <div id="menu" class="hidden">Menu Content</div> -->
     </nav>
     <!-- Konten halaman di sini -->
-    <div class="absolute top-20 w-full min flex justify-center">
+    <div class="absolute top-24 w-full min flex justify-center z-40">
       <img
-        src="./assets/about/header-about.png"
+        src="./assets/about/2026/text-about-us.png"
         alt="header-about"
         class="object-cover min-[1920px]:w-[1920px] min-[1920px]:h-[1080px]"
       />
     </div>
 
-    <div id="container-base" class="flex justify-center background-base">
+    <div
+      id="container-base"
+      class="relative flex justify-center overflow-hidden background-base"
+    >
       <div
-        class="mt-48 min-[428px]:mt-52 min-[768px]:mt-80 min-[820px]:mt-[350px] min-[800px]:mt-[340px] min-[1114px]:mt-[490px] min-[1439px]:mt-[635px] min-[884px]:mt-[380px] min-[1280px]:mt-[560px] min-[1920px]:mt-[752px] min-[2048px]:mt-[800px]"
+        class="mt-24 min-[428px]:mt-52 min-[768px]:mt-80 min-[820px]:mt-[350px] min-[800px]:mt-[340px] min-[1114px]:mt-[490px] min-[1439px]:mt-[635px] min-[884px]:mt-[380px] min-[1280px]:mt-[560px] min-[1920px]:mt-[752px] min-[2048px]:mt-[800px]"
       >
         <div
           id="image-konser"
-          class="mt-[8px] flex justify-center items-center 2xl:mt-10 z-50"
+          class="mt-[20px] flex justify-center items-center 2xl:mt-10 z-50"
         >
           <img
-            class="w-[100%] h-[100%] md:mt-16 lg:mt-20 2xl:mt-24 min-[2048px]:mt-32 z-50"
-            src="assets/about/image-concert.png"
+            class="w-[84%] h-[84%] md:mt-16 lg:mt-20 2xl:mt-24 min-[2048px]:mt-32 z-50"
+            src="assets/about/2026/image-under-about-us.png"
             alt="image-konser-page-about"
           />
         </div>
+
         <div
-          class="px-8 min-[820px]:px-10 min-[1280px]:px-24 flex justify-center"
+          class="px-8 min-[820px]:px-10 min-[1280px]:px-24 flex justify-center mt-5"
         >
-          <img src="/assets/about/text.png" alt="text" />
+          <img src="/assets/about/2026/text-paragraf.png" alt="text" class=""/>
         </div>
 
-        <div class="min-[1280px]:mb-20 min-[1920px]:mb-36">
+        <div class="-mt-6 min-[1280px]:mb-20 min-[1920px]:mb-36">
           <img
-            src="./assets/about/stones-and-star.png"
-            alt="stones-and-star"
-            class="sm:max-w-md max-w-xs mx-auto"
+            src="./assets/about/2026/text-history-with-leaf.png"
+            alt="history-with-leaf"
+            class=""
+          />
+        </div>
+
+        <div class="relative z-40 -mt-6 min-[1280px]:mb-20 min-[1920px]:mb-36 flex justify-center">
+          <img
+            src="./assets/about/2026/list-history.png"
+            alt="history-list"
+            class="w-[84%]"
           />
         </div>
 
         <div
-          class="space-y-3 p-7 min-[1920px]:mb-[430px] mb-44 min-[768px]:mb-80 min-[1280px]:mb-96"
+          class="relative z-20 space-y-3 p-7 mb-12  min-[768px]:mb-20 min-[1280px]:mb-28 min-[1920px]:mb-32"
         >
           <img
-            src="./assets/about/button-buy.png"
+            src="./assets/about/2026/button.png"
             alt="Buy Your Ticket Here"
-            class="sm:max-w-md max-w-xs mx-auto"
+            class="sm:max-w-md max-w-xs mx-auto w-[84%]"
             style="cursor: pointer"
-            onclick="window.open('https://snaptix.id/events/elfestival-vol3', '_blank');"
+            onclick="window.open('https://snaptix.id/events/elfest-2026', '_blank');"
           />
         </div>
       </div>
-    </div>
 
-    <div id="footer" class="absolute bottom-0 w-full z-50"></div>
+       <!-- Decoration Ballon -->
+      <img
+        src="assets/about/2026/ballon.png"
+        alt="balloon-left"
+        class="absolute -left-8 top-[19%] w-40 -translate-x-1/4 sm:w-40 md:w-24 lg:w-28"
+      />
+      <img
+        src="assets/about/2026/ballon.png"
+        alt="balloon-right"
+        class="absolute -right-[118px] bottom-[41.5%] w-40 -translate-x-1/4 sm:w-20 md:w-24 lg:w-28"
+      />
+
+     <!-- Backgound image for button but the ticket-->
+
+      <img
+        src="assets/about/2026/background-in-bottom.png"
+        alt="background-button"
+        class="absolute -bottom-32 w-full h-auto z-0 pointer-events-none"
+      />
+
+      <!-- Under button buy the ticket-->
+      <img
+        src="assets/about/2026/big-leaf.png"
+        alt="balloon-left"
+        class="absolute left-8 bottom-0 w-40 -translate-x-1/4 sm:w-40 md:w-24 lg:w-28"
+      />
+      <img
+        src="assets/about/2026/big-leaf-with-star.png"
+        alt="balloon-right"
+        class="absolute -right-[40px] bottom-0 w-40 -translate-x-1/4 sm:w-20 md:w-24 lg:w-28"
+      />
+    </div>
+     
+    <!--Call the component footer-->
+    <!-- <div id="footer" class="absolute bottom-0 w-full z-50"></div> -->
 
     <script src="script.js"></script>
   </body>
