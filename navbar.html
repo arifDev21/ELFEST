@@ -15,12 +15,12 @@
       <!-- Left: Hamburger (mobile) / Nav links (desktop) -->
       <div
         class="nav-left relative z-30 flex items-center min-w-0 flex-1 lg:flex-initial lg:flex-1 lg:justify-start lg:z-auto">
-        <label for="menu-toggle" id="navbar-menu-btn" role="button"
-          class="lg:hidden relative z-[100] inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 min-w-[44px] min-h-[44px] items-center justify-center border-0 bg-transparent"
-          aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu-panel" tabindex="0">
+        <button type="button" id="navbar-menu-btn"
+          class="lg:hidden relative z-[100] inline-flex shrink-0 p-3 -ml-2 -my-1 text-white cursor-pointer touch-manipulation min-w-[48px] min-h-[48px] items-center justify-center border-0 bg-transparent"
+          aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu-panel">
           <img src="assets/others/hamburger.svg" alt="" width="32" height="32" decoding="async" fetchpriority="high"
-            class="w-7 h-7 sm:w-8 sm:h-8 object-contain image-rendering-crisp pointer-events-none" />
-        </label>
+            class="w-8 h-8 object-contain image-rendering-crisp pointer-events-none" />
+        </button>
         <div class="hidden lg:flex items-center gap-1">
           <a href="index.html" class="nav-link">Home</a>
           <a href="line-up.html" class="nav-link">Our Line Up</a>
@@ -45,22 +45,21 @@
           class="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain image-rendering-crisp opacity-90 hover:opacity-100 transition-opacity" />
       </div>
     </div>
-
-    <!-- Mobile menu overlay (nimpa halaman, tidak nambah height) -->
-    <div class="mobile-menu-container" id="mobile-menu-panel">
-      <label for="menu-toggle" class="mobile-menu-backdrop" aria-label="Tutup menu"></label>
-      <div class="mobile-menu-panel">
-        <div class="mobile-menu-content">
-          <a href="index.html" class="mobile-menu-link">Home</a>
-          <a href="line-up.html" class="mobile-menu-link">Our Line Up</a>
-          <a href="history.html" class="mobile-menu-link">History</a>
-          <a href="gallery.html" class="mobile-menu-link">Gallery</a>
-          <a href="about.html" class="mobile-menu-link">About</a>
-        </div>
-      </div>
-    </div>
   </div>
 </nav>
+<!-- Di luar nav agar tidak terpotong overflow-hidden di HP -->
+<div class="mobile-menu-container" id="mobile-menu-panel">
+  <button type="button" class="mobile-menu-backdrop" aria-label="Tutup menu" id="mobile-menu-close"></button>
+  <div class="mobile-menu-panel">
+    <div class="mobile-menu-content">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="line-up.html" class="mobile-menu-link">Our Line Up</a>
+      <a href="history.html" class="mobile-menu-link">History</a>
+      <a href="gallery.html" class="mobile-menu-link">Gallery</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+    </div>
+  </div>
+</div>
 <!-- Tailwind & font dari halaman induk (tidak duplikat di sini) -->
 <style>
   .image-rendering-crisp {
@@ -119,7 +118,7 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
-  #menu-toggle:checked~.mobile-menu-container {
+  .mobile-menu-container.is-open {
     z-index: 50;
     opacity: 1;
     visibility: visible;
@@ -135,7 +134,7 @@
     transition: background 0.35s ease;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-backdrop {
+  .mobile-menu-container.is-open .mobile-menu-backdrop {
     background: rgba(0, 0, 0, 0.5);
   }
 
@@ -144,7 +143,8 @@
     top: 0;
     left: 0.75rem;
     right: 0.75rem;
-    max-height: min(320px, calc(100vh - 5.5rem));
+    z-index: 10;
+    max-height: min(320px, calc(100dvh - 5.5rem));
     overflow-y: auto;
     overflow-x: hidden;
     background: rgba(45, 18, 145, 0.95);
@@ -159,7 +159,7 @@
     transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.3s ease;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-panel {
+  .mobile-menu-container.is-open .mobile-menu-panel {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
@@ -190,28 +190,28 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link {
+  .mobile-menu-container.is-open .mobile-menu-link {
     transform: translateY(0);
     opacity: 1;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(1) {
+  .mobile-menu-container.is-open .mobile-menu-link:nth-child(1) {
     transition-delay: 0.1s;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(2) {
+  .mobile-menu-container.is-open .mobile-menu-link:nth-child(2) {
     transition-delay: 0.16s;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(3) {
+  .mobile-menu-container.is-open .mobile-menu-link:nth-child(3) {
     transition-delay: 0.22s;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(4) {
+  .mobile-menu-container.is-open .mobile-menu-link:nth-child(4) {
     transition-delay: 0.28s;
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(5) {
+  .mobile-menu-container.is-open .mobile-menu-link:nth-child(5) {
     transition-delay: 0.34s;
   }
 
@@ -225,7 +225,7 @@
     transform: translateY(0) scale(0.98);
   }
 
-  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:active {
+  .mobile-menu-container.is-open .mobile-menu-link:active {
     transform: translateY(0) scale(0.98);
   }
 
@@ -331,5 +331,6 @@
   #navbar-menu-btn {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
+    touch-action: manipulation;
   }
 </style>

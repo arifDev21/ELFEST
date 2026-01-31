@@ -20,11 +20,31 @@ function loadComponent(id, url, callback) {
 function setupNavbarFunctionality() {
   var menuBtn = document.getElementById('navbar-menu-btn');
   var menuToggle = document.getElementById('menu-toggle');
+  var menuPanel = document.getElementById('mobile-menu-panel');
+  var menuClose = document.getElementById('mobile-menu-close');
 
   if (menuBtn && menuToggle) {
-    menuBtn.setAttribute('aria-expanded', menuToggle.checked);
-    menuToggle.addEventListener('change', function () {
-      menuBtn.setAttribute('aria-expanded', menuToggle.checked);
+    function updateMenu() {
+      var open = menuToggle.checked;
+      menuBtn.setAttribute('aria-expanded', open);
+      if (menuPanel) menuPanel.classList.toggle('is-open', open);
+    }
+    updateMenu();
+    menuToggle.addEventListener('change', updateMenu);
+
+    menuBtn.addEventListener('pointerdown', function (e) {
+      e.preventDefault();
+      menuToggle.checked = !menuToggle.checked;
+      updateMenu();
+    });
+  }
+  if (menuClose && menuToggle) {
+    menuClose.addEventListener('pointerdown', function (e) {
+      e.preventDefault();
+      menuToggle.checked = false;
+      if (menuPanel) menuPanel.classList.remove('is-open');
+      var menuBtn = document.getElementById('navbar-menu-btn');
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
     });
   }
 }
