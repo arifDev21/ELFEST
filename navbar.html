@@ -1,6 +1,6 @@
 <!-- Navigation Bar -->
 <nav class="nav-bar relative z-[10000] overflow-hidden shadow-lg">
-  <div class="nav-bg absolute inset-0"></div>
+  <div class="nav-bg absolute inset-0 pointer-events-none"></div>
   <div class="nav-bubbles" aria-hidden="true">
     <span class="nav-bubble" style="--i: 1"></span>
     <span class="nav-bubble" style="--i: 2"></span>
@@ -15,12 +15,12 @@
       <!-- Left: Hamburger (mobile) / Nav links (desktop) -->
       <div
         class="nav-left relative z-30 flex items-center min-w-0 flex-1 lg:flex-initial lg:flex-1 lg:justify-start lg:z-auto">
-        <label for="menu-toggle"
-          class="lg:hidden inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 min-w-[44px] min-h-[44px] items-center justify-center"
-          aria-label="Open menu">
+        <button type="button" id="navbar-menu-btn"
+          class="lg:hidden inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 min-w-[44px] min-h-[44px] items-center justify-center border-0 bg-transparent"
+          aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu-panel">
           <img src="assets/others/hamburger.svg" alt="" width="32" height="32" decoding="async" fetchpriority="high"
             class="w-7 h-7 sm:w-8 sm:h-8 object-contain image-rendering-crisp pointer-events-none" />
-        </label>
+        </button>
         <div class="hidden lg:flex items-center gap-1">
           <a href="index.html" class="nav-link">Home</a>
           <a href="line-up.html" class="nav-link">Our Line Up</a>
@@ -47,7 +47,7 @@
     </div>
 
     <!-- Mobile menu overlay (nimpa halaman, tidak nambah height) -->
-    <div class="mobile-menu-container">
+    <div class="mobile-menu-container" id="mobile-menu-panel">
       <label for="menu-toggle" class="mobile-menu-backdrop" aria-label="Tutup menu"></label>
       <div class="mobile-menu-panel">
         <div class="mobile-menu-content">
@@ -325,5 +325,10 @@
 
   .nav-logo {
     transition: transform 0.25s ease;
+  }
+
+  #navbar-menu-btn {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
 </style>

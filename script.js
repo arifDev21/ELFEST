@@ -18,12 +18,16 @@ function loadComponent(id, url, callback) {
 }
 
 function setupNavbarFunctionality() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
+  var menuBtn = document.getElementById('navbar-menu-btn');
+  var menuToggle = document.getElementById('menu-toggle');
 
-  if (menuToggle && menu) {
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+  if (menuBtn && menuToggle) {
+    menuBtn.addEventListener('click', function () {
+      menuToggle.checked = !menuToggle.checked;
+      menuBtn.setAttribute('aria-expanded', menuToggle.checked);
+    });
+    menuToggle.addEventListener('change', function () {
+      menuBtn.setAttribute('aria-expanded', menuToggle.checked);
     });
   }
 }
