@@ -13,9 +13,10 @@
     <input type="checkbox" id="menu-toggle" class="peer sr-only" aria-label="Toggle menu" />
     <div class="nav-row relative flex items-center justify-between h-16 lg:h-20 min-h-[4rem]">
       <!-- Left: Hamburger (mobile) / Nav links (desktop) -->
-      <div class="nav-left flex items-center min-w-0 flex-1 lg:flex-initial lg:flex-1 lg:justify-start">
+      <div
+        class="nav-left relative z-30 flex items-center min-w-0 flex-1 lg:flex-initial lg:flex-1 lg:justify-start lg:z-auto">
         <label for="menu-toggle"
-          class="lg:hidden inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 items-center justify-center"
+          class="lg:hidden inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 min-w-[44px] min-h-[44px] items-center justify-center"
           aria-label="Open menu">
           <img src="assets/others/hamburger.svg" alt="" width="32" height="32" decoding="async" fetchpriority="high"
             class="w-7 h-7 sm:w-8 sm:h-8 object-contain image-rendering-crisp pointer-events-none" />
