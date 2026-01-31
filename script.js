@@ -22,10 +22,7 @@ function setupNavbarFunctionality() {
   var menuToggle = document.getElementById('menu-toggle');
 
   if (menuBtn && menuToggle) {
-    menuBtn.addEventListener('click', function () {
-      menuToggle.checked = !menuToggle.checked;
-      menuBtn.setAttribute('aria-expanded', menuToggle.checked);
-    });
+    menuBtn.setAttribute('aria-expanded', menuToggle.checked);
     menuToggle.addEventListener('change', function () {
       menuBtn.setAttribute('aria-expanded', menuToggle.checked);
     });

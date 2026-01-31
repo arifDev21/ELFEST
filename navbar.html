@@ -15,12 +15,12 @@
       <!-- Left: Hamburger (mobile) / Nav links (desktop) -->
       <div
         class="nav-left relative z-30 flex items-center min-w-0 flex-1 lg:flex-initial lg:flex-1 lg:justify-start lg:z-auto">
-        <button type="button" id="navbar-menu-btn"
-          class="lg:hidden inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 min-w-[44px] min-h-[44px] items-center justify-center border-0 bg-transparent"
-          aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu-panel">
+        <label for="menu-toggle" id="navbar-menu-btn" role="button"
+          class="lg:hidden relative z-[100] inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 min-w-[44px] min-h-[44px] items-center justify-center border-0 bg-transparent"
+          aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu-panel" tabindex="0">
           <img src="assets/others/hamburger.svg" alt="" width="32" height="32" decoding="async" fetchpriority="high"
             class="w-7 h-7 sm:w-8 sm:h-8 object-contain image-rendering-crisp pointer-events-none" />
-        </button>
+        </label>
         <div class="hidden lg:flex items-center gap-1">
           <a href="index.html" class="nav-link">Home</a>
           <a href="line-up.html" class="nav-link">Our Line Up</a>
@@ -112,7 +112,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 50;
+    z-index: -1;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -120,6 +120,7 @@
   }
 
   #menu-toggle:checked~.mobile-menu-container {
+    z-index: 50;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
