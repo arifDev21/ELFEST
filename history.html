@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ELFEST - History</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -22,28 +22,28 @@
 
 <body class="bg-[#2D1291]">
   <div class="relative">
-    <img src="./assets/explore/background.webp" class="absolute object-cover h-full w-auto " />
+    <img src="./assets/explore/background.webp" class="absolute object-cover h-full w-auto" loading="lazy" alt="" />
     <nav id="navbar">
       <button id="menu-toggle">Toggle Menu</button>
       <div id="menu" class="hidden">Menu Content</div>
     </nav>
     <div class="relative z-10 pb-20">
-      <img src="./assets/history/history.png" alt="History">
-      <img src="./assets/history/ikan.png" alt="Ikan" class="absolute top-20 right-0 w-16">
+      <img src="./assets/history/history.png" alt="History" loading="lazy">
+      <img src="./assets/history/ikan.png" alt="Ikan" class="absolute top-20 right-0 w-16" loading="lazy">
 
       <!-- INi button nya buat pindah history -->
       <div class="flex gap-4 justify-center mb-10">
         <img src="./assets/history/btn-2024.png" class="w-28 cursor-pointer hover:scale-110 transition-transform"
-          id="btn-2024">
+          loading="lazy" id="btn-2024">
         <img src="./assets/history/btn-2025.png" class="w-28 cursor-pointer hover:scale-110 transition-transform"
-          id="btn-2025">
+          loading="lazy" id="btn-2025">
       </div>
 
 
       <!-- HISTORY 2025 -->
       <div class="max-w-sm mx-auto relative z-20" id="history-2025">
-        <img src="./assets/history/history-2025.png" alt="History 2025">
-        <img src="./assets/history/photo-2025.png" alt="Elfest 2025" class="w-full mt-10">
+        <img src="./assets/history/history-2025.png" alt="History 2025" loading="lazy">
+        <img src="./assets/history/photo-2025.png" alt="Elfest 2025" class="w-full mt-10" loading="lazy">
         <p class="font-semibold text-gray-100 text-justify mt-5">ELFEST 2025 digelar pada 26 April 2025 di Secapa AD
           Bandung dengan tema dunia khayalan Wonderland-Z. Festival ini
           berhasil menghadirkan suasana yang seru, penuh warna, dan dekat dengan semua generasi.
@@ -66,8 +66,8 @@
 
       <!-- HISTORY 2024 -->
       <div class="max-w-sm mx-auto relative z-20 hidden" id="history-2024">
-        <img src="./assets/history/history-2024.png" alt="History 2024">
-        <img src="./assets/history/photo-2024.png" alt="Elfest 2024" class="w-full mt-10">
+        <img src="./assets/history/history-2024.png" alt="History 2024" loading="lazy">
+        <img src="./assets/history/photo-2024.png" alt="Elfest 2024" class="w-full mt-10" loading="lazy">
         <p class="font-semibold text-gray-100 text-justify mt-5">ELFEST 2024 digelar pada 18 Mei 2024 di Lapangan Brigif
           15
           Kujang, Cimahi, dan menjadi
@@ -97,12 +97,12 @@
       <img src="./assets/history/coral.png" class="absolute bottom-0 w-48 -left-16 scale-x-[-1]">
 
       <a href="https://snaptix.id/events/elfest-2026">
-        <img src="./assets/history/button.png" class="mx-auto w-[70%] mt-10">
+        <img src="./assets/history/button.png" class="mx-auto w-[70%] mt-10" loading="lazy" alt="Beli tiket">
       </a>
     </div>
     <div id="footer" class=""></div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

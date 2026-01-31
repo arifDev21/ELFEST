@@ -2,683 +2,288 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELFEST 2026</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/flip.min.css" />
-
-    <style>
-        html, body {
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100vh;
-        }
-        /* Background Styles */
-        .background {
-            aspect-ratio: 5 / 3;
-            width: 100%;
-            min-height: 100vh;
-            background-image: url('assets/home/background-home.png');
-            background-size: cover;
-            background-position: center top;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-
-        /* Mobile (up to 640px) */
-        @media (max-width: 640px) {
-            .background {
-                background-size: cover;
-                background-position: center top;
-                min-height: 100vh;
-                background-attachment: scroll;
-            }
-        }
-
-        /* Tablet (641px to 1024px) */
-        @media (min-width: 641px) and (max-width: 1024px) {
-            .background {
-                background-size: cover;
-                background-position: center top;
-                min-height: 150vh;
-                background-attachment: scroll;
-                height: auto;
-            }
-        }
-
-        /* Desktop (1025px and above) */
-        @media (min-width: 1025px) {
-            .background {
-                background-size: cover;
-                background-position: center bottom;
-                min-height: 280vh;
-                background-attachment: scroll;
-                height: auto;
-            }
-        }
-
-        /* Countdown Timer Styles */
-        .tick {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #ffffff;
-            font-weight: bold;
-            width: 100%;
-            height: 100%;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        @media (min-width: 640px) {
-            .tick {
-                font-size: 2rem;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .tick {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .tick {
-                font-size: 3rem;
-            }
-        }
-
-        /* Image Rendering */
-        .image-rendering-crisp {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            -webkit-font-smoothing: antialiased;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-        }
-        
-        /* --- HERO ANIMATION --- */
-        .fade-in-hero {
-            opacity: 0;
-            transform: scale(0.95) translateY(30px);
-            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in-hero.visible {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-
-        /* Responsive overlay positioning */
-        .overlay-container {
-            position: relative;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 1rem;
-        }
-
-        .overlay-first {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            width: 100%;
-            top: 5%;
-        }
-
-        .overlay-second {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            top: 20%;
-        }
-
-        .octopus-foreground {
-            position: absolute;
-            width: 100%;
-            top: 20%;
-            overflow-x: hidden
-        }
-
-        /* Mobile (up to 640px) */
-        @media (max-width: 640px) {
-            .overlay-container {
-                top: 28%;
-                padding: 0 0.5rem;
-            }
-
-            .overlay-first {
-                top: 30%;
-                width: 100%;
-            }
-
-            .overlay-second {
-                top: 75%;
-            }
-
-            .octopus-foreground {
-                top: 70%;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                scale: 1.5;
-                transform: scale(1.5);
-            }
-
-        }
-
-        @media (min-width: 641px) {
-       .overlay-container {
-                top: 25%;
-                padding: 0 3rem;
-            }
-            .overlay-first {
-                top: 30%;
-                width: 100%;
-            }
-
-            .overlay-second {
-                top: 75%;
-            }
-
-            .octopus-foreground {
-                top: 70%;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                scale: 1.5;
-                transform: scale(1.5);
-            }
-
-        }
-        /* Small Desktop (1025px to 1440px) */
-        @media (min-width: 1025px) and (max-width: 1440px) {
-            .overlay-container {
-                top: 20%;
-                padding: 0 3rem;
-            }
-
-            .overlay-first {
-                top: 30%;
-            }
-
-            .overlay-second {
-                top: 78%;
-            }
-
-            .octopus-foreground {
-                transform: scale(1.8);
-                scale: 1.8;
-                top: 88%;
-                overflow-x: hidden;
-            }
-        }
-
-
-        @media (min-width: 1025px) {
-          .overlay-container {
-            top: 17%;
-          }
-            .overlay-first {
-                top: 120%;
-            }
-
-            .overlay-second {
-                top: 160%;
-            }
-
-            .octopus-foreground {
-                top: 160%;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                width: 100%;
-                transform: scale(1.1);
-                scale: 1.1;
-                overflow-x: hidden;
-            }
-        }
-
-        .lineup-img {
-          width: 100vw;
-          height: auto;
-          object-fit: cover;
-          display: block;
-          margin: 0 auto;
-          max-width: 100vw;
-        }
-
-        @media (max-width: 640px) {
-          .lineup-img {
-            width: 100vw;
-            max-width: 100vw;
-            margin-top: 50px;
-            transform: scale(1.1);
-            scale: 1.1;
-          }
-          
-          .lineup-section {
-            margin-top: 4rem !important;
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 1024px) {
-          .lineup-img {
-            width: 90vw;
-            max-width: 100vw;
-            margin-top: 300px;
-            transform: scale(1.3);
-            scale: 1.3;
-          }
-        }
-
-        @media (min-width: 1025px) {
-          .lineup-img {
-            margin-top: 300px;
-            width: 100vw;
-            max-width: 100vw;
-            transform: scale(1.1);
-            scale: 1.1;
-          }
-
-          .lineup-section {
-            margin-top: 24rem !important;
-            top: 130px;
-          }
-        }
-
-        /* Above Footer Styles */
-        .above-footer {
-          width: 100vw;
-          height: 100vh;
-          object-fit: cover;
-          display: block;
-          position: relative;
-          z-index: 5;
-          margin-top: auto;
-          margin-bottom: 0;
-        }
-
-        @media (max-width: 640px) {
-          .above-footer {
-            width: 100vh;
-            height: 100vh;
-            /* height: 170vh; */
-            /* margin-bottom: 2rem; */
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 768px) {
-          .above-footer {
-            width: 100vw;
-            height: 100vh;
-            margin-bottom: 3rem;
-          }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .above-footer {
-            width: 100vw;
-            height: 100vh;
-            margin-bottom: 4rem;
-          }
-        }
-
-        @media (min-width: 1025px) and (max-width: 1440px) {
-          .above-footer {
-            width: 100vw;
-            height: 150vh;
-            margin-bottom: 5rem;
-          }
-        }
-
-        @media (min-width: 1441px) {
-          .above-footer {
-            width: 100vw;
-            height: 230vh;
-            margin-top: 100px;
-            margin-bottom: 6rem;
-          }
-        }
-
-        /* Countdown Timer Responsive Styles */
-        .countdown-container {
-          position: relative;
-          z-index: 10;
-          width: 100%;
-          max-width: 4xl;
-          margin: 0 auto;
-          padding: 2rem 1rem;
-        }
-
-        @media (max-width: 640px) {
-          .countdown-container {
-            padding: 1rem 1rem;
-            margin-top: 0.5rem;
-            /* margin-bottom: 2rem; */
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 768px) {
-          .countdown-container {
-            padding: 1.5rem 1rem;
-            margin-top: 0.75rem;
-            /* margin-bottom: 3rem; */
-          }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .countdown-container {
-            padding: 2rem 1rem;
-            margin-top: 1rem;
-            margin-bottom: 4rem;
-          }
-        }
-
-        @media (min-width: 1025px) and (max-width: 1440px) {
-          .countdown-container {
-            padding: 1rem 1rem;
-            margin-top: 0.5rem;
-            margin-bottom: 8rem;
-          }
-        }
-
-        @media (min-width: 1441px) {
-          .countdown-container {
-            padding: 1.25rem 1rem;
-            margin-top: 0.75rem;
-            margin-bottom: 10rem;
-          }
-        }
-
-        /* Fish Image Styles */
-        .fish-img {
-          width: auto;
-          height: auto;
-          object-fit: contain;
-          display: block;
-          margin: 0 auto;
-          position: relative;
-          z-index: 8;
-        }
-
-        @media (max-width: 640px) {
-          .fish-img {
-            width: 60vw;
-            height: 80px;
-            max-width: 200px;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            top: 80px;
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 768px) {
-          .fish-img {
-            width: 50vw;
-            height: 100px;
-            max-width: 250px;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-            top: 100px;
-          }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .fish-img {
-            width: 40vw;
-            height: 120px;
-            max-width: 300px;
-            margin-top: 10rem;
-            margin-bottom: 2rem;
-            top: 100px;
-          }
-        }
-
-        @media (min-width: 1025px) and (max-width: 1440px) {
-          .fish-img {
-            width: 35vw;
-            height: 140px;
-            max-width: 350px;
-            margin-top: 10rem;
-            margin-bottom: 2.5rem;
-            top: 50px;
-          }
-        }
-
-        @media (min-width: 1441px) {
-          .fish-img {
-            width: 50vw;
-            height: 300px;
-            max-width: 400px;
-            margin-top: 10rem;
-            margin-bottom: 3rem;
-            top: 60px;
-          }
-        }
-
-        /* CAN'T WAIT TO SEE YOU Image Styles */
-        .cant-wait-img {
-          width: auto;
-          height: auto;
-          object-fit: contain;
-          display: block;
-          margin: 0 auto;
-          position: relative;
-          z-index: 8;
-        }
-
-        @media (max-width: 640px) {
-          .cant-wait-img {
-            width: 80vw;
-            height: 120px;
-            max-width: 300px;
-            margin-top: 3rem;
-            margin-bottom: 2rem;
-            top: 80px;
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 768px) {
-          .cant-wait-img {
-            width: 70vw;
-            height: 150px;
-            max-width: 400px;
-            margin-top: 3.5rem;
-            margin-bottom: 2.5rem;
-            top: 40px;
-          }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .cant-wait-img {
-            width: 60vw;
-            height: 180px;
-            max-width: 500px;
-            margin-top: 4rem;
-            margin-bottom: 3rem;
-            top: 120px;
-          }
-        }
-
-        @media (min-width: 1025px) and (max-width: 1440px) {
-          .cant-wait-img {
-            width: 50vw;
-            height: 200px;
-            max-width: 600px;
-            margin-top: 12rem;
-            margin-bottom: 3.5rem;
-            top: 60px;
-          }
-        }
-
-        @media (min-width: 1441px) {
-          .cant-wait-img {
-            width: 60vw;
-            height: 350px;
-            max-width: 700px;
-            margin-top: 12rem;
-            margin-bottom: 4rem;
-            top: 150px;
-          }
-        }
-
-        /* Footer Styles */
-        #footer {
-          position: relative;
-          z-index: 10;
-          width: 100%;
-          background: transparent;
-          margin: 0;
-          padding: 0;
-          margin-top: -50px;
-        }
-
-        @media (max-width: 640px) {
-          #footer {
-            margin: 0;
-            padding: 0;
-            margin-top: -60px;
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 1024px) {
-          #footer {
-            margin-top: -168px;
-          }
-        }
-
-        @media (min-width: 1025px) {
-          #footer {
-            margin-top: -100px;
-          }
-        }
-
-        /* Remove white space at bottom */
-        body {
-          background: #000;
-        }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="description" content="Euphoria Life Fest - Bandung, 25-26 April 2026" />
+  <title>Euphoria Life Fest</title>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="stylesheet" href="flip.min.css" />
+
+  <style>
+    .bg-hero {
+      background-image: url("assets/home/elfest-vol-3/story flyer 1.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (min-width: 768px) {
+      .bg-hero {
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        min-width: 100%;
+      }
+    }
+
+    /* Countdown Timer - Mobile */
+    .countdown-container {
+      transform: scale(1.5);
+      transform-origin: center;
+    }
+
+    @media (min-width: 640px) {
+      .countdown-container {
+        transform: scale(1.2);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .countdown-container {
+        transform: scale(0.9);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .countdown-container {
+        transform: scale(1);
+      }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Titan+One&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: { colors: { primary: '#2d1291' } }
+      }
+    };
+  </script>
+  <script src="script.js" defer></script>
 </head>
 
-<body>
-    <!-- Navbar -->
-    <nav id="navbar"></nav>
+<body class="min-h-screen flex flex-col relative bg-[#2D1290]">
+  <nav id="navbar" class="z-50"></nav>
 
-    <!-- Main Content -->
-    <main class="flex flex-col items-center overflow-hidden">
-        <!-- Hero Section -->
-        <section class="flex flex-col items-center w-full background pt-4 sm:pt-8 md:pt-12 lg:pt-16 xl:pt-20">
-            <div class="flex flex-col items-center max-w-6xl mx-auto px-4 w-full">
-                <img src="assets/home/PRESENT TO YOU.png" alt="Present to You"
-                    class="w-2/3 sm:w-1/2 md:w-2/5 lg:w-1/3 xl:w-1/4 max-w-xs mb-2 sm:mb-4 md:mb-6 lg:mb-8 image-rendering-crisp fade-in-hero"
-                    id="hero-present">
-                <img src="assets/home/ELFEST 2026.png" alt="ELFEST 2026"
-                    class="w-full sm:w-11/12 md:w-full max-w-5xl mb-4 sm:mb-6 md:mb-8 lg:mb-12 image-rendering-crisp fade-in-hero"
-                    id="hero-title">
-            </div>
+  <!-- Mobile-first: flex column, stacked. Desktop (md:): full width -->
+  <div class="relative w-full min-h-[100dvh] sm:min-h-screen bg-hero flex flex-col items-center pb-10 md:pb-0">
 
-            <!-- Buy Tickets Section -->
-            <div class="flex justify-center w-full px-4 mb-4 sm:mb-6 md:mb-8 lg:mb-12">
-                <img src="assets/home/BUY TICKETS.png" alt="Buy Tickets"
-                onclick="window.open('https://snaptix.id/events/elfestival-vol3', '_blank')"
-                    class="w-4/5 sm:w-3/4 md:w-2/3 lg:w-1/2 max-w-2xl cursor-pointer hover:scale-105 transition-transform duration-300 image-rendering-crisp">
-            </div>
+    <!-- 1. Main Lineup Feed -->
+    <img
+      class="block w-full max-w-xs sm:max-w-sm h-auto object-contain mx-auto mb-4 md:max-w-4xl md:w-full md:h-auto md:object-contain md:mb-4"
+      src="assets/home/elfest-vol-3/Salinan dari Feeds 45 (2) (Konten Instagram (45)) 1.svg"
+      alt="Event lineup and details" />
 
-            <!-- Turtle & Octopus Section -->
-            <div class="overlay-container px-4 mt-4 sm:mt-8 md:mt-12 lg:mt-16">
-                <!-- Turtle & Octopus (background) -->
-                <img src="assets/home/turtle & octopus.png" alt="Turtle & Octopus"
-                    class="w-full max-w-4xl mx-auto image-rendering-crisp lg:top-full fade-in-hero relative z-20" id="hero-turtle">
+    <!-- 2+4. Mobile: [flyer kiri][Story Section][flyer kanan]. Desktop: full width -->
+    <div class="flex flex-row justify-between items-start gap-1 w-full mb-4 md:gap-2">
+      <img loading="lazy"
+        class="flex-shrink-0 w-[calc(50%-4px)] max-w-[80px] sm:max-w-[100px] h-auto object-contain md:max-w-[200px] md:w-auto"
+        src="assets/home/elfest-vol-3/Story flyer (2) 2.svg" alt="Event promotional content" />
+      <img loading="lazy" class="flex-1 min-w-0 w-full max-w-[400px] sm:max-w-[460px] h-auto object-cover md:max-w-full md:w-full"
+        src="assets/home/elfest-vol-3/Salinan dari Story flyer (3) 1.svg" alt="Event lineup information" />
+      <img loading="lazy"
+        class="flex-shrink-0 w-[calc(50%-4px)] max-w-[80px] sm:max-w-[100px] h-auto object-contain md:max-w-[200px] md:w-auto"
+        src="assets/home/elfest-vol-3/Story flyer (2) 3.svg" alt="Event promotional content" />
+    </div>
 
-                <!-- First Overlay -->
-                <img src="assets/home/first overlay turtle & octopus.png" alt="Overlay"
-                    class="overlay-first image-rendering-crisp fade-in-hero z-10" id="hero-first-over">
+    <!-- 3. Sponsors Button Buy Ticket-->
+    <img loading="lazy"
+      class="block w-full max-w-xs sm:max-w-sm h-auto object-contain mx-auto mb-4 md:max-w-4xl md:w-full md:h-auto md:object-contain md:mb-4"
+      src="assets/home/elfest-vol-3/Group 29.svg" alt="Event sponsors and partners" />
 
-                <!-- Second Overlay -->
-                <img src="assets/home/overlay turtle & octopus.png" alt="Overlay"
-                    class="overlay-second w-screen image-rendering-crisp fade-in-hero z-8" id="hero-over">
+    <!-- 5. Feed + Side: mobile absolute [side kiri][feed center], desktop full width -->
+    <div
+      class="relative w-full min-h-[90px] mb-4 md:min-h-auto md:flex md:flex-row md:justify-between md:items-start md:gap-2">
+      <img loading="lazy"
+        class="absolute left-0 top-0 w-[calc(50%-4px)] max-w-[60px] sm:max-w-[80px] h-auto object-contain md:relative md:max-w-[200px] md:w-auto md:left-auto md:top-auto"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 1.svg" alt="Event promotional content" />
+      <img loading="lazy"
+        class="absolute left-1/2 -translate-x-1/2 top-0 max-w-[280px] sm:max-w-[320px] h-auto object-contain md:relative md:max-w-4xl md:w-full md:left-auto md:translate-x-0 md:top-auto md:flex-1"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds 45 (2) (Konten Instagram (45)) (2) 1.svg"
+        alt="Event promotional content" />
+    </div>
 
-                <!-- Octopus (foreground) -->
-                <img src="assets/home/octopus.png" alt="Octopus"
-                    class="octopus-foreground image-rendering-crisp fade-in-hero z-5" id="hero-octopus">
-            </div>
+    <!-- 6+7. Countdown Story + Story 9: mobile absolute dalam wrapper, desktop full width -->
+    <div
+      class="relative w-full min-h-[300px] mb-4 md:min-h-[720px] md:grid md:grid-cols-[1fr_3fr_1fr] md:gap-6 md:items-start">
+      <!-- Kolom 1 - Spacer -->
+      <div class="hidden md:block"></div>
 
-        </section>
+      <!-- 6. Countdown Story - Kolom 2 -->
+      <img loading="lazy"
+        class="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain md:relative md:left-auto md:translate-x-0 md:top-auto md:w-full md:h-[720px] md:max-w-none md:object-contain"
+        src="assets/home/elfest-vol-3/Salinan dari Story flyer (6) 1.svg" alt="Event countdown and information" />
 
-        <!-- Lineup Section -->
-        <section class="w-full overflow-hidden" style="background: linear-gradient(180deg, #033c62 0%, #285d7d 50%, #48ebfc 100%);">
-            <div class="relative flex flex-col items-center h-full w-full lineup-section mt-32 sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56 pt-8 sm:pt-12 md:pt-16 xl:pt-20">
-                <!-- Lineup Title -->
+      <!-- Kolom 3 - Grid 3 baris -->
+      <div class="hidden md:grid md:grid-rows-3 md:gap-6 md:h-[720px]">
+        <!-- Row 1: Story 9 -->
+        <img loading="lazy" class="w-auto max-w-[200px] h-auto object-contain justify-self-end"
+          src="assets/home/elfest-vol-3/Story flyer (3) 1.svg" alt="Event promotional content" />
 
-                <img src="assets/home/buble.png" alt="Lineup Background" class="w-full absolute top-20 left-0 right-0 bottom-0 max-w-4xl mx-auto mb-4 sm:mb-6 md:mb-8 xl:mb-12 xl:top-56 relative z-10 image-rendering-crisp px-4" />
-                <img src="assets/home/OUR LINEUP.png" alt="Our Lineup"
-                    class="w-full max-w-4xl mx-auto mb-4 sm:mb-6 md:mb-8 xl:mb-12 relative z-10 image-rendering-crisp px-4" />
+        <!-- Row 2: Spacer -->
+        <div></div>
 
-                <!-- Lineup Image -->
-                <img src="assets/home/LINEUP.png" alt="Lineup" class="lineup-img" />
-            
-                <img src="assets/home/fish.png" alt="Above Footer Background" class="fish-img image-rendering-crisp" />
+        <!-- Row 3: Side 2 -->
+        <img loading="lazy" class="w-auto max-w-[200px] h-auto object-contain justify-self-end self-end"
+          src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 2.svg" alt="Event promotional content" />
+      </div>
 
-                <img src="assets/home/CAN’T WAIT TO SEE YOU!.png" alt="Can't Wait To See You" class="cant-wait-img image-rendering-crisp" />
-                <!-- Countdown Timer -->
-                <div class="countdown-container">
-                    <div class="tick" data-did-init="handleTickInit">
-                        <div data-layout="horizontal fit"
-                            class="flex justify-center items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4">
-                            <span data-key="days" data-transform="pad(000)" data-view="flip"></span>
-                            <span data-view="text" data-key="sep" class="tick-text-inline">:</span>
-                            <span data-key="hours" data-transform="pad(00)" data-view="flip"></span>
-                            <span data-view="text" data-key="sep" class="tick-text-inline">:</span>
-                            <span data-key="minutes" data-transform="pad(00)" data-view="flip"></span>
-                            <span data-view="text" data-key="sep" class="tick-text-inline">:</span>
-                            <span data-key="seconds" data-transform="pad(00)" data-view="flip"></span>
-                        </div>
-                    </div>
-                </div>
+      <!-- Mobile: Story 9 dan Side 2 absolute -->
+      <img loading="lazy"
+        class="absolute right-0 top-0 w-[calc(50%-8px)] max-w-[120px] sm:max-w-[140px] h-auto object-contain md:hidden"
+        src="assets/home/elfest-vol-3/Story flyer (3) 1.svg" alt="Event promotional content" />
+      <img loading="lazy"
+        class="absolute right-0 top-[220px] w-[calc(50%-4px)] max-w-[100px] sm:max-w-[120px] h-auto object-contain md:hidden"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 2.svg" alt="Event promotional content" />
+    </div>
 
-                <img src="assets/home/above-footer.png" alt="Above Footer Background" class="above-footer image-rendering-crisp" />
-        </section>
-    </main>
+    <!-- 8+10+15. Feed 3 + Story 10 + Story Flyer 7: mobile absolute [kiri][tengah][kanan], desktop grid 3 kolom -->
+    <div class="relative w-full min-h-[235px] mb-4 md:min-h-auto md:grid md:gap-6 md:grid-cols-[1fr_3fr_1fr]">
+      <!-- Kolom 1 - Grid 2 baris: Story 10 dan Story Flyer 7 -->
+      <div class="hidden md:grid md:grid-rows-2 md:gap-6">
+        <!-- Row 1: Story 10 -->
+        <img loading="lazy" class="w-auto max-w-[200px] h-auto object-contain"
+          src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 3.svg" alt="Event promotional content" />
 
-    <!-- Footer -->
-    <div id="footer" class="w-full"></div>
+        <!-- Row 2: Story Flyer 7 -->
+        <img loading="lazy" class="w-auto max-w-[200px] h-auto object-contain" src="assets/home/elfest-vol-3/Story flyer (6) 1.svg"
+          alt="Event promotional content" />
+      </div>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-    <script src="/flip.min.js"></script>
-    <script>
-        // Hero section animation on load
-        window.addEventListener('DOMContentLoaded', function () {
-            setTimeout(function () {
-                document.getElementById('hero-present')?.classList.add('visible');
-            }, 100);
-            setTimeout(function () {
-                document.getElementById('hero-title')?.classList.add('visible');
-            }, 400);
-            setTimeout(function () {
-                document.getElementById('hero-turtle')?.classList.add('visible');
-            }, 500);
-            setTimeout(function () {
-                document.getElementById('hero-first-over')?.classList.add('visible');
-            }, 500);
-            setTimeout(function () {
-                document.getElementById('hero-over')?.classList.add('visible');
-            }, 500);
-            setTimeout(function () {
-                document.getElementById('hero-octopus')?.classList.add('visible');
-            }, 500);
+      <!-- Kolom 2: Feed 3 -->
+      <img loading="lazy"
+        class="absolute left-1/2 -translate-x-1/2 top-[80px] w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain md:relative md:left-auto md:translate-x-0 md:top-auto md:w-full md:max-w-none md:object-contain"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds 45 (2) (Konten Instagram (45)) (2) 3.svg"
+        alt="Event promotional content" />
 
-        });
-    </script>
+      <!-- Kolom 3 - Spacer -->
+      <div class="hidden md:block"></div>
+
+      <!-- Mobile: Story 10 dan Story Flyer 7 absolute -->
+      <img loading="lazy"
+        class="absolute left-0 top-0 w-[calc(50%-4px)] max-w-[100px] sm:max-w-[120px] h-auto object-contain md:hidden"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 3.svg" alt="Event promotional content" />
+      <img loading="lazy"
+        class="absolute left-0 top-[150px] w-[calc(50%-4px)] max-w-[100px] sm:max-w-[120px] h-auto object-contain md:hidden"
+        src="assets/home/elfest-vol-3/Story flyer (6) 1.svg" alt="Event promotional content" />
+    </div>
+
+    <!-- 11. Aftermovie 2025 - Grid 3 kolom -->
+    <div class="relative w-full mb-4 md:grid md:grid-cols-[1fr_3fr_1fr] md:gap-6 md:items-start">
+      <!-- Kolom 1 - Spacer -->
+      <div class="hidden md:block"></div>
+
+      <!-- Kolom 2 - Video -->
+      <div
+        class="w-full max-w-xs sm:max-w-sm aspect-video overflow-hidden mx-auto md:max-w-none md:w-full md:mx-0 md:min-h-[400px]">
+        <video class="block w-full h-full aspect-video object-cover object-center" autoplay muted loop playsinline
+          controls preload="metadata" poster="assets/home/elfest-vol-3/Group 24.svg">
+          <source src="assets/afterMovie/afterMovie Elfest2025.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Kolom 3 - Story Flyer 8 -->
+      <img loading="lazy"
+        class="absolute top-0 right-0 w-[60px] sm:w-[80px] h-auto object-contain z-20 md:relative md:max-w-[200px] md:w-auto md:right-auto md:top-auto md:z-10 md:justify-self-end"
+        src="assets/home/elfest-vol-3/Story flyer (5) 1.svg" alt="Event promotional content" />
+    </div>
+
+    <!-- 14. Feed 4 -->
+    <img loading="lazy"
+      class="block w-full max-w-xs sm:max-w-sm h-auto object-contain mx-auto mb-4 md:max-w-4xl md:w-full md:h-auto md:object-contain md:mb-4"
+      src="assets/home/elfest-vol-3/Salinan dari Feeds 45 (2) (Konten Instagram (45)) (2) 4.svg"
+      alt="Event promotional content" />
+
+
+    <!-- 16. Aftermovie 2024 - Grid 3 kolom -->
+    <div class="relative w-full mb-4 md:grid md:grid-cols-[1fr_3fr_1fr] md:gap-6 md:items-start">
+      <!-- Kolom 1 - Spacer -->
+      <div class="hidden md:block"></div>
+
+      <!-- Kolom 2 - Video -->
+      <div
+        class="w-full max-w-xs sm:max-w-sm aspect-video overflow-hidden mx-auto md:max-w-none md:w-full md:mx-0 md:min-h-[400px]">
+        <video class="w-full h-full object-cover object-center" autoplay muted loop playsinline controls preload="metadata"
+          poster="assets/home/elfest-vol-3/Rectangle 20.svg">
+          <source src="assets/afterMovie/afterMovie Elfest2024.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Kolom 3 - Side Feeds Kanan -->
+      <img loading="lazy"
+        class="absolute top-0 right-0 w-[60px] sm:w-[80px] h-auto object-contain z-20 md:relative md:max-w-[120px] md:w-auto md:right-auto md:top-auto md:z-10 md:justify-self-end"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 (A5 (Horizontal)) (1) 1.svg"
+        alt="Event promotional content" />
+    </div>
+
+
+
+    <!-- 19. Countdown Feed + Side - Grid 3 kolom -->
+    <div class="relative w-full mb-4 md:grid md:grid-cols-[1fr_3fr_1fr] md:gap-6 md:items-start">
+      <!-- Kolom 1 - Spacer -->
+      <div class="hidden md:block"></div>
+
+      <!-- Kolom 2 - Countdown Feed -->
+      <img loading="lazy"
+        class="block w-full max-w-xs sm:max-w-sm h-auto object-contain mx-auto md:max-w-none md:w-full md:h-auto md:object-contain md:mx-0"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds 45 (2) (Konten Instagram (45)) (3) 1.svg"
+        alt="Event countdown information" />
+
+      <!-- Kolom 3 - Side Feeds 4 -->
+      <img loading="lazy"
+        class="absolute top-0 right-0 w-[60px] sm:w-[80px] h-auto object-contain z-20 md:relative md:max-w-[200px] md:w-auto md:right-auto md:top-auto md:z-10 md:justify-self-end"
+        src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 4.svg" alt="Event promotional content" />
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-container mb-24">
+      <div class="tick" data-did-init="handleTickInit">
+        <div data-layout="horizontal fit" class="flex justify-center items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4">
+          <span data-key="days" data-transform="pad(000)" data-view="flip"></span>
+          <span data-view="text" data-key="sep" class="tick-text-inline">:</span>
+          <span data-key="hours" data-transform="pad(00)" data-view="flip"></span>
+          <span data-view="text" data-key="sep" class="tick-text-inline">:</span>
+          <span data-key="minutes" data-transform="pad(00)" data-view="flip"></span>
+          <span data-view="text" data-key="sep" class="tick-text-inline">:</span>
+          <span data-key="seconds" data-transform="pad(00)" data-view="flip"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20. Side Feeds Kiri -->
+    <img loading="lazy"
+      class="absolute top-[calc(100%-180px)] left-0 w-[50px] sm:w-[70px] h-auto object-contain z-20 md:relative md:top-auto md:max-w-[200px] md:w-auto md:left-auto md:z-10 md:mb-4"
+      src="assets/home/elfest-vol-3/Salinan dari Feeds. 45 (A5 (Horizontal)) (1) 2.svg"
+      alt="Event promotional content" />
+
+
+
+    <!-- 18. Story Flyer 2: overlay paling belakang di atas footer - full width di semua ukuran -->
+    <img loading="lazy"
+      class="absolute bottom-0 left-0 w-full h-auto object-contain z-[-1] md:w-full md:h-auto md:object-contain md:z-[-1]"
+      src="assets/home/elfest-vol-3/Story flyer (1) 2.svg" alt="Event promotional banner" />
+
+    <!-- 21. Story Flyer 3 & 4: kanan-kiri paling bawah menimpa Story Flyer 2 - full width di semua ukuran -->
+    <div class="absolute bottom-0 left-0 right-0 flex flex-row justify-between items-end gap-1 w-full z-10 md:gap-2">
+      <img loading="lazy"
+        class="w-[calc(50%-4px)] max-w-[120px] sm:max-w-[140px] h-auto object-contain md:max-w-[300px] md:w-auto md:h-auto md:object-contain"
+        src="assets/home/elfest-vol-3/Story flyer (4) 2.svg" alt="Event promotional content" />
+      <img loading="lazy"
+        class="w-[calc(50%-4px)] max-w-[120px] sm:max-w-[140px] h-auto object-contain md:max-w-[300px] md:w-auto md:h-auto md:object-contain"
+        src="assets/home/elfest-vol-3/Story flyer (4) 1.svg" alt="Event promotional content" />
+    </div>
+
+  </div>
+
+
+
+
+  <div id="footer" class="bottom-0 w-full z-50"></div>
 </body>
-
-</html>
+<script src="flip.min.js" defer></script>
 </html>

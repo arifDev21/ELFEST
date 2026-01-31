@@ -1,145 +1,67 @@
 <!-- Navigation Bar -->
-<nav class="bg-[#127ab0] relative overflow-hidden">
-  <!-- Sea Wave Shape Background -->
-  <div class="absolute inset-0">
-    <!-- Multiple wave layers for ocean effect -->
-    <svg class="w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <!-- Deepest wave layer -->
-      <path 
-        d="M0,120 L0,95 Q100,85 200,95 T400,95 T600,95 T800,95 T1000,95 T1200,95 L1200,120 Z" 
-        fill="#0d5a8a"
-      />
-      <!-- Deep wave layer -->
-      <path 
-        d="M0,120 L0,90 Q150,70 300,90 T600,90 T900,90 T1200,90 L1200,120 Z" 
-        fill="#0f6cb1"
-      />
-      <!-- Middle wave layer -->
-      <path 
-        d="M0,120 L0,75 Q200,55 400,75 T800,75 T1200,75 L1200,120 Z" 
-        fill="#1184c7"
-      />
-      <!-- Upper wave layer -->
-      <path 
-        d="M0,120 L0,60 Q250,40 500,60 T1000,60 T1200,60 L1200,120 Z" 
-        fill="#1398d8"
-      />
-      <!-- Surface wave layer -->
-      <path 
-        d="M0,120 L0,50 Q300,30 600,50 T1200,50 L1200,120 Z" 
-        fill="#15ace9"
-      />
-      <!-- Foam effect -->
-      <path 
-        d="M0,120 L0,45 Q300,25 600,45 T1200,45 L1200,120 Z" 
-        fill="#17c0fa"
-      />
-      <!-- Top foam layer -->
-      <path 
-        d="M0,120 L0,40 Q350,20 700,40 T1200,40 L1200,120 Z" 
-        fill="#19d4ff"
-      />
-      
-
-    </svg>
+<nav class="nav-bar relative z-[10000] overflow-hidden shadow-lg">
+  <div class="nav-bg absolute inset-0"></div>
+  <div class="nav-bubbles" aria-hidden="true">
+    <span class="nav-bubble" style="--i: 1"></span>
+    <span class="nav-bubble" style="--i: 2"></span>
+    <span class="nav-bubble" style="--i: 3"></span>
+    <span class="nav-bubble" style="--i: 4"></span>
+    <span class="nav-bubble" style="--i: 5"></span>
   </div>
-  
 
-  
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="flex items-center justify-between h-20">
-      <!-- Left side: Logo and Hamburger -->
-      <div class="flex items-center space-x-4">
-        <label
-          for="menu-toggle"
-          class="block lg:hidden text-white cursor-pointer"
-        >
-          <img
-            src="assets/others/hamburger.svg"
-            alt="Menu"
-            class="w-8 h-8 object-contain image-rendering-crisp"
-          />
+  <div class="nav-inner relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+    <input type="checkbox" id="menu-toggle" class="peer sr-only" aria-label="Toggle menu" />
+    <div class="nav-row relative flex items-center justify-between h-16 lg:h-20 min-h-[4rem]">
+      <!-- Left: Hamburger (mobile) / Nav links (desktop) -->
+      <div class="nav-left flex items-center min-w-0 flex-1 lg:flex-initial lg:flex-1 lg:justify-start">
+        <label for="menu-toggle"
+          class="lg:hidden inline-flex shrink-0 p-2 -ml-2 text-white cursor-pointer touch-manipulation w-10 h-10 items-center justify-center"
+          aria-label="Open menu">
+          <img src="assets/others/hamburger.svg" alt="" width="32" height="32" decoding="async" fetchpriority="high"
+            class="w-7 h-7 sm:w-8 sm:h-8 object-contain image-rendering-crisp pointer-events-none" />
         </label>
-        <!-- Title logo - hidden on mobile -->
-        <img
-          src="assets/others/Epic Life Festival glow 1.png"
-          alt="Logo"
-          class="hidden lg:block w-32 h-32 object-contain image-rendering-crisp"
-        />
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="line-up.html" class="nav-link">Our Line Up</a>
+          <a href="history.html" class="nav-link">History</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="about.html" class="nav-link">About</a>
+        </div>
       </div>
 
-      <!-- Center: Title logo for mobile, Navigation Menu for desktop -->
-      <div class="flex items-center">
-        <!-- Title logo - visible only on mobile -->
-        <img
-          src="assets/others/Epic Life Festival glow 1.png"
-          alt="Logo"
-          class="h-20 w-20 block lg:hidden object-contain image-rendering-crisp"
-        />
-        <!-- Navigation menu - visible only on desktop -->
-        <div class="hidden lg:flex flex-row items-center space-x-6 text-white">
-          <a
-            href="index.html"
-            class="block lg:inline px-4 py-2 rounded-md text-center hover:bg-white hover:text-[#97e4f5] transition duration-300 font-semibold"
-            >Home</a
-          >
-          <a
-            href="explore.html"
-            class="block lg:inline px-4 py-2 rounded-md text-center hover:bg-white hover:text-[#0f6cb1] transition duration-300 font-semibold"
-            >Explore</a
-          >
-          <a
-            href="about.html"
-            class="block lg:inline px-4 py-2 rounded-md text-center hover:bg-white hover:text-[#0f6cb1] transition duration-300 font-semibold"
-            >About</a
-          >
-          <!-- <a
-            href="contact.html"
-            class="block lg:inline px-4 py-2 rounded-md text-center hover:bg-white hover:text-[#0f6cb1] transition duration-300 font-semibold"
-            >Contact</a
-          > -->
-        </div>
+      <!-- Center: Logo (posisi relatif ke .nav-row agar tidak turun saat menu mobile terbuka) -->
+      <div class="nav-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-shrink-0">
+        <a href="index.html" class="nav-logo-link block">
+          <img src="assets/others/logo-elfest-2026.svg" alt="ELFEST 2026" width="180" height="72" decoding="async"
+            fetchpriority="high"
+            class="nav-logo h-12 sm:h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain image-rendering-crisp" />
+        </a>
+      </div>
+
+      <!-- Right: SMC logo (balance for center) -->
+      <div class="nav-right flex items-center justify-end min-w-0 flex-1 lg:flex-initial lg:flex-1">
+        <img src="assets/others/logo-smc.svg" alt="SMC" width="56" height="56" decoding="async"
+          class="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain image-rendering-crisp opacity-90 hover:opacity-100 transition-opacity" />
       </div>
     </div>
 
-    <!-- Mobile Menu (Inside nav) -->
-    <input type="checkbox" id="menu-toggle" class="hidden" />
-    <div class="mobile-menu-container" id="mobile-menu">
-      <div class="mobile-menu-content">
-        <a
-          href="home.html"
-          class="block px-4 py-2 text-white hover:bg-[#97e4f5] rounded-md transition duration-300 font-semibold"
-          >Home</a
-        >
-        <a
-          href="explore.html"
-          class="mobile-menu-link"
-          >Explore</a
-        >
-        <a
-          href="about.html"
-          class="mobile-menu-link"
-          >About</a
-        >
-        <!-- <a
-          href="contact.html"
-          class="mobile-menu-link"
-          >Contact</a> -->
+    <!-- Mobile menu overlay (nimpa halaman, tidak nambah height) -->
+    <div class="mobile-menu-container">
+      <label for="menu-toggle" class="mobile-menu-backdrop" aria-label="Tutup menu"></label>
+      <div class="mobile-menu-panel">
+        <div class="mobile-menu-content">
+          <a href="index.html" class="mobile-menu-link">Home</a>
+          <a href="line-up.html" class="mobile-menu-link">Our Line Up</a>
+          <a href="history.html" class="mobile-menu-link">History</a>
+          <a href="gallery.html" class="mobile-menu-link">Gallery</a>
+          <a href="about.html" class="mobile-menu-link">About</a>
+        </div>
       </div>
     </div>
   </div>
 </nav>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
-  rel="stylesheet"
-/>
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind & font dari halaman induk (tidak duplikat di sini) -->
 <style>
-  body {
-    font-family: "Roboto", sans-serif;
-  }
-
   .image-rendering-crisp {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -148,263 +70,259 @@
     backface-visibility: hidden;
   }
 
-  /* Mobile Menu Styles */
-  .mobile-menu-container {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 0 0 15px 15px;
-    margin-top: 0;
+  /* Desktop nav links */
+  .nav-link {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border-radius: 6px;
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
   }
 
-  #menu-toggle:checked ~ .mobile-menu-container {
-    max-height: 300px;
-    margin-top: 1rem;
+  .nav-link:hover {
+    color: #2D1291;
+    background: #fff;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.25rem;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #2D1291;
+    transition: width 0.25s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after {
+    width: 70%;
+  }
+
+  /* Mobile menu: overlay + animasi */
+  .mobile-menu-container {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  #menu-toggle:checked~.mobile-menu-container {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.35s ease;
+  }
+
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .mobile-menu-panel {
+    position: absolute;
+    top: 0;
+    left: 0.75rem;
+    right: 0.75rem;
+    max-height: min(320px, calc(100vh - 5.5rem));
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: rgba(45, 18, 145, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 0 0 16px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-24px) scale(0.96);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.3s ease;
+  }
+
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 
   .mobile-menu-content {
-    padding: 1rem;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease-in-out;
-  }
-
-  #menu-toggle:checked ~ .mobile-menu-container .mobile-menu-content {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 0.75rem 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .mobile-menu-link {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: white;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 1rem;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    transform: translateX(-20px);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.3s ease;
+    transform: translateY(12px);
     opacity: 0;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  #menu-toggle:checked ~ .mobile-menu-container .mobile-menu-link {
-    transform: translateX(0);
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link {
+    transform: translateY(0);
     opacity: 1;
   }
 
-  #menu-toggle:checked ~ .mobile-menu-container .mobile-menu-link:nth-child(1) {
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(1) {
     transition-delay: 0.1s;
   }
 
-  #menu-toggle:checked ~ .mobile-menu-container .mobile-menu-link:nth-child(2) {
-    transition-delay: 0.2s;
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(2) {
+    transition-delay: 0.16s;
   }
 
-  #menu-toggle:checked ~ .mobile-menu-container .mobile-menu-link:nth-child(3) {
-    transition-delay: 0.3s;
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(3) {
+    transition-delay: 0.22s;
   }
 
-  #menu-toggle:checked ~ .mobile-menu-container .mobile-menu-link:nth-child(4) {
-    transition-delay: 0.4s;
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(4) {
+    transition-delay: 0.28s;
+  }
+
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:nth-child(5) {
+    transition-delay: 0.34s;
   }
 
   .mobile-menu-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.22);
   }
 
-  /* Hide on desktop */
+  .mobile-menu-link:active {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(0) scale(0.98);
+  }
+
+  #menu-toggle:checked~.mobile-menu-container .mobile-menu-link:active {
+    transform: translateY(0) scale(0.98);
+  }
+
   @media (min-width: 1024px) {
     .mobile-menu-container {
       display: none;
     }
   }
 
-  /* Ocean wave animations */
-  nav svg path:nth-child(1) {
-    animation: oceanWave1 8s ease-in-out infinite;
-    transform-origin: center;
+  /* Navbar background */
+  .nav-bg {
+    background: linear-gradient(135deg, #1f0d6b 0%, #2D1291 45%, #2a1185 100%);
+    background-size: 200% 200%;
+    animation: navGradientShift 10s ease-in-out infinite;
   }
 
-  nav svg path:nth-child(2) {
-    animation: oceanWave2 7s ease-in-out infinite;
-    transform-origin: center;
+  .nav-bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
   }
 
-  nav svg path:nth-child(3) {
-    animation: oceanWave3 6s ease-in-out infinite;
-    transform-origin: center;
+  .nav-bubble {
+    position: absolute;
+    bottom: -16px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    animation: navBubbleUp 5s ease-in infinite;
+    animation-delay: calc(var(--i) * 0.6s);
   }
 
-  nav svg path:nth-child(4) {
-    animation: oceanWave4 5s ease-in-out infinite;
-    transform-origin: center;
+  .nav-bubble:nth-child(1) {
+    left: 12%;
   }
 
-  nav svg path:nth-child(5) {
-    animation: oceanWave5 4s ease-in-out infinite;
-    transform-origin: center;
+  .nav-bubble:nth-child(2) {
+    left: 32%;
+    width: 5px;
+    height: 5px;
+    animation-duration: 4s;
   }
 
-  nav svg path:nth-child(6) {
-    animation: oceanWave6 3s ease-in-out infinite;
-    transform-origin: center;
+  .nav-bubble:nth-child(3) {
+    left: 52%;
+    width: 7px;
+    height: 7px;
+    animation-duration: 5.5s;
   }
 
-  nav svg path:nth-child(7) {
-    animation: oceanWave7 2s ease-in-out infinite;
-    transform-origin: center;
+  .nav-bubble:nth-child(4) {
+    left: 72%;
+    width: 4px;
+    height: 4px;
+    animation-duration: 3.5s;
   }
 
-
-
-  /* Wave Animation Keyframes */
-  @keyframes oceanWave1 {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.12;
-    }
-    20% { 
-      transform: translateX(-20px) translateY(-5px) rotate(1deg) scale(1.02);
-      opacity: 0.18;
-    }
-    40% { 
-      transform: translateX(15px) translateY(-3px) rotate(-1deg) scale(0.98);
-      opacity: 0.08;
-    }
-    60% { 
-      transform: translateX(-10px) translateY(-8px) rotate(2deg) scale(1.05);
-      opacity: 0.15;
-    }
-    80% { 
-      transform: translateX(25px) translateY(-2px) rotate(-2deg) scale(0.95);
-      opacity: 0.10;
-    }
-    100% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.12;
-    }
+  .nav-bubble:nth-child(5) {
+    left: 88%;
+    width: 6px;
+    height: 6px;
+    animation-duration: 4.5s;
   }
 
-  @keyframes oceanWave2 {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.15;
+  @keyframes navGradientShift {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
     }
-    25% { 
-      transform: translateX(30px) translateY(-4px) rotate(-2deg) scale(1.03);
-      opacity: 0.20;
-    }
-    50% { 
-      transform: translateX(-15px) translateY(-6px) rotate(1deg) scale(0.97);
-      opacity: 0.10;
-    }
-    75% { 
-      transform: translateX(20px) translateY(-1px) rotate(3deg) scale(1.04);
-      opacity: 0.18;
-    }
-    100% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.15;
+
+    50% {
+      background-position: 100% 50%;
     }
   }
 
-  @keyframes oceanWave3 {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.10;
+  @keyframes navBubbleUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.35;
     }
-    33% { 
-      transform: translateX(-25px) translateY(-7px) rotate(-1deg) scale(1.06);
-      opacity: 0.15;
-    }
-    66% { 
-      transform: translateX(18px) translateY(-2px) rotate(2deg) scale(0.94);
-      opacity: 0.05;
-    }
-    100% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.10;
+
+    100% {
+      transform: translateY(-100px) scale(0.5);
+      opacity: 0;
     }
   }
 
-  @keyframes oceanWave4 {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.08;
-    }
-    50% { 
-      transform: translateX(35px) translateY(-9px) rotate(3deg) scale(1.08);
-      opacity: 0.12;
-    }
-    100% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.08;
-    }
+  .nav-logo-link {
+    transition: transform 0.25s ease;
   }
 
-  @keyframes oceanWave5 {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.06;
-    }
-    33% { 
-      transform: translateX(-20px) translateY(-4px) rotate(-2deg) scale(1.03);
-      opacity: 0.09;
-    }
-    66% { 
-      transform: translateX(25px) translateY(-6px) rotate(1deg) scale(0.97);
-      opacity: 0.04;
-    }
-    100% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.06;
-    }
+  .nav-logo-link:hover .nav-logo {
+    transform: scale(1.06);
   }
 
-  @keyframes oceanWave6 {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.05;
-    }
-    40% { 
-      transform: translateX(30px) translateY(-3px) rotate(2deg) scale(1.05);
-      opacity: 0.08;
-    }
-    80% { 
-      transform: translateX(-15px) translateY(-5px) rotate(-1deg) scale(0.95);
-      opacity: 0.03;
-    }
-    100% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.05;
-    }
-  }
-
-  @keyframes oceanWave7 {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.03;
-    }
-    50% { 
-      transform: translateX(40px) translateY(-7px) rotate(4deg) scale(1.1);
-      opacity: 0.06;
-    }
-    100% { 
-      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-      opacity: 0.03;
-    }
-  }
-
-
-
-  /* Glow effect */
-  nav svg path {
-    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)) drop-shadow(0 0 10px rgba(255,255,255,0.3));
+  .nav-logo {
+    transition: transform 0.25s ease;
   }
 </style>

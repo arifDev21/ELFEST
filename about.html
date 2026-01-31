@@ -1,129 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .background-base {
-        background-image: url("assets/about/2026/background.png");
-        background-size: cover;
-      }
 
-      .poppins-thin {
-        font-family: "Poppins", serif;
-        font-weight: 100;
-        font-style: normal;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <style>
+    .background-base {
+      background-image: url("assets/about/2026/background.png");
+      background-size: cover;
+    }
 
-      .titan-one-regular {
-        font-family: "Titan One", serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titan+One&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    .poppins-thin {
+      font-family: "Poppins", serif;
+      font-weight: 100;
+      font-style: normal;
+    }
 
-  <body class="min-h-screen flex flex-col relative bg-[#2D1290]">
-    <nav id="navbar" class="z-50">
-      <!-- <button id="menu-toggle">Toggle Menu</button> -->
-      <!-- <div id="menu" class="hidden">Menu Content</div> -->
-    </nav>
-    <!-- Konten halaman di sini -->
-    <div class="absolute top-24 w-full min flex justify-center z-40">
-      <img
-        src="./assets/about/2026/text-about-us.png"
-        alt="header-about"
-        class="object-cover"
-      />
-    </div>
+    .titan-one-regular {
+      font-family: "Titan One", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titan+One&display=swap"
+    rel="stylesheet" />
+</head>
 
-    <div
-      id="container-base"
-      class="relative flex justify-center overflow-hidden background-base"
-    >
-      <div
-        class="mt-24 min-[428px]:mt-52 
+<body class="min-h-screen flex flex-col relative bg-[#2D1290]">
+  <nav id="navbar" class="z-100">
+    <!-- <button id="menu-toggle">Toggle Menu</button> -->
+    <!-- <div id="menu" class="hidden">Menu Content</div> -->
+  </nav>
+  <!-- Konten halaman di sini -->
+  <div class="absolute top-24 w-full min flex justify-center z-40">
+    <img src="./assets/about/2026/text-about-us.png" alt="header-about" class="object-cover" loading="lazy" />
+  </div>
+
+  <div id="container-base" class="relative flex justify-center overflow-hidden background-base">
+    <div class="mt-24 min-[428px]:mt-52 
         min-[768px]:mt-32
         min-[820px]:mt-[148px]
         min-[1114px]:mt-[180px] 
         min-[1280px]:mt-[230px] 
         min-[1439px]:mt-[635px]
         min-[1920px]:mt-[250px] 
-        min-[2048px]:mt-[200px]"
-      >
-        <div
-          id="image-konser"
-          class="mt-[20px] flex justify-center items-center 2xl:mt-10 z-50"
-        >
-          <img
-            class="w-[84%] h-[84%] 
+        min-[2048px]:mt-[200px]">
+      <div id="image-konser" class="mt-[20px] flex justify-center items-center 2xl:mt-10 z-50">
+        <img class="w-[84%] h-[84%] 
             md:mt-16 lg:mt-20 2xl:mt-24
             min-[1920px]:w-[60%]
-            min-[2048px]:mt-32 z-50"
-            src="assets/about/2026/image-under-about-us.png"
-            alt="image-konser-page-about"
-          />
-        </div>
-
-        <div
-          class=" flex justify-center mt-5
-          min-[768px]:mt-10 min-[1920px]:mt-20:"
-        >
-          <img src="/assets/about/2026/text-paragraf.png" alt="text" 
-          class="
-            w-[84%]
-            min-[1920px]:w-[60%]
-          "/>
-        </div>
-
-        <div class="-mt-6 min-[1280px]:mb-20 min-[1920px]:mb-36">
-          <img
-            src="./assets/about/2026/text-history-with-leaf.png"
-            alt="history-with-leaf"
-            class="w-[100%]
-            "
-          />
-        </div>
-
-        <div class="relative z-40 -mt-6 min-[1280px]:mb-20 min-[1920px]:mb-60 flex justify-center min-[768px]:mb-12">
-          <img
-            src="./assets/about/2026/list-history.png"
-            alt="history-list"
-            class="w-[84%]
-            min-[1920px]:w-[60%]
-            "
-          />
-        </div>
-
-        <div
-          class="relative z-20 space-y-3 p-7 mb-12  min-[768px]:mb-20 min-[1280px]:mb-28 min-[1920px]:mb-32"
-        >
-          <img
-            src="./assets/about/2026/button.png"
-            alt="Buy Your Ticket Here"
-            class="sm:max-w-md max-w-xs mx-auto w-[84%]
-            min-[1920px]:w-[1200px]
-            min-[1920px]:h-auto
-            "
-            style="cursor: pointer"
-            onclick="window.open('https://snaptix.id/events/elfest-2026', '_blank');"
-          />
-        </div>
+            min-[2048px]:mt-32 z-50" src="assets/about/2026/image-under-about-us.png" alt="image-konser-page-about"
+          loading="lazy" />
       </div>
 
-       <!-- Decoration Ballon -->
-      <img
-        src="assets/about/2026/ballon.png"
-        alt="balloon-left"
-        class="absolute -left-8
+      <div class=" flex justify-center mt-5
+          min-[768px]:mt-10 min-[1920px]:mt-20:">
+        <img src="assets/about/2026/text-paragraf.png" alt="text" loading="lazy" class="
+            w-[84%]
+            min-[1920px]:w-[60%]
+          " />
+      </div>
+
+      <div class="-mt-6 min-[1280px]:mb-20 min-[1920px]:mb-36">
+        <img src="./assets/about/2026/text-history-with-leaf.png" alt="history-with-leaf" class="w-[100%]"
+          loading="lazy" />
+      </div>
+
+      <div class="relative z-40 -mt-6 min-[1280px]:mb-20 min-[1920px]:mb-60 flex justify-center min-[768px]:mb-12">
+        <img src="./assets/about/2026/list-history.png" alt="history-list" class="w-[84%] min-[1920px]:w-[60%]"
+          loading="lazy" />
+      </div>
+
+      <div class="relative z-20 space-y-3 p-7 mb-12  min-[768px]:mb-20 min-[1280px]:mb-28 min-[1920px]:mb-32">
+        <img src="./assets/about/2026/button.png" loading="lazy" alt="Buy Your Ticket Here" class="sm:max-w-md max-w-xs mx-auto w-[84%]
+            min-[1920px]:w-[1200px]
+            min-[1920px]:h-auto
+            " style="cursor: pointer" onclick="window.open('https://snaptix.id/events/elfest-2026', '_blank');" />
+      </div>
+    </div>
+
+    <!-- Decoration Ballon -->
+    <img loading="lazy" src="assets/about/2026/ballon.png" alt="balloon-left" class="absolute -left-8
         min-[768px]:-left-16
         min-[768px]:w-80
         min-[1280px]:w-96
@@ -131,12 +93,8 @@
         min-[1280px]:top-[20%]
         min-[1920px]:w-[500px]
         min-[1920px]:-left-24
-        top-[19%] w-40 -translate-x-1/4"
-      />
-      <img
-        src="assets/about/2026/ballon.png"
-        alt="balloon-right"
-        class="absolute -right-[118px] bottom-[40%]
+        top-[19%] w-40 -translate-x-1/4" />
+    <img loading="lazy" src="assets/about/2026/ballon.png" alt="balloon-right" class="absolute -right-[118px] bottom-[40%]
         min-[375px]:bottom-[40.5%]
         min-[393px]:bottom-[41%]
         min-[428px]:bottom-[38%]
@@ -150,38 +108,26 @@
         w-40 
         min-[768px]:w-80
         min-[768px]:-right-60
-        -translate-x-1/4"
-      />
+        -translate-x-1/4" />
 
-     <!-- Backgound image for button but the ticket-->
+    <!-- Backgound image for button but the ticket-->
 
-      <img
-        src="assets/about/2026/background-in-bottom.png"
-        alt="background-button"
-        class="absolute -bottom-36
+    <img loading="lazy" src="assets/about/2026/background-in-bottom.png" alt="background-button" class="absolute -bottom-36
         min-[768px]:-bottom-72
         min-[820px]:-bottom-[350px]
         min-[1024px]:-bottom-[480px]
         min-[1920px]:-bottom-[900px]
         min-[2048px]:-bottom-[1000px]
-        w-full h-auto z-0 pointer-events-none"
-      />
+        w-full h-auto z-0 pointer-events-none" />
 
-      <!-- Under button buy the ticket-->
-      <img
-        src="assets/about/2026/big-leaf.png"
-        alt="balloon-left"
-        class="absolute left-8 bottom-0 w-40 
+    <!-- Under button buy the ticket-->
+    <img loading="lazy" src="assets/about/2026/big-leaf.png" alt="balloon-left" class="absolute left-8 bottom-0 w-40 
         min-[768px]:w-60
         min-[1024px]:w-80
         min-[1114px]:w-80
         min-[1920px]:w-[500px]
-        -translate-x-1/4"
-      />
-      <img
-        src="assets/about/2026/big-leaf-with-star.png"
-        alt="balloon-right"
-        class="absolute -right-[40px] bottom-0
+        -translate-x-1/4" />
+    <img loading="lazy" src="assets/about/2026/big-leaf-with-star.png" alt="balloon-right" class="absolute -right-[40px] bottom-0
         w-40
         min-[768px]:w-60
         min-[768px]:-right-16
@@ -191,13 +137,13 @@
         min-[1114px]:-right-24
         min-[1920px]:-right-32
         min-[1920px]:w-[500px]
-        -translate-x-1/4 sm:w-20 md:w-24 lg:w-28"
-      />
-    </div>
-     
-    <!--Call the component footer-->
-    <div id="footer" class="bottom-0 w-full z-50"></div>
+        -translate-x-1/4 sm:w-20 md:w-24 lg:w-28" />
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <!--Call the component footer-->
+  <div id="footer" class="bottom-0 w-full z-50"></div>
+
+  <script src="script.js" defer></script>
+</body>
+
 </html>

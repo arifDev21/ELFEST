@@ -1,0 +1,620 @@
+.line-up-page {
+    background-color: #2d1291;
+    overflow: hidden;
+    width: 100%;
+    min-width: 1407px;
+    min-height: 6028px;
+    position: relative;
+}
+
+.line-up-page .story-flyer {
+    position: absolute;
+    top: 321px;
+    left: 0;
+    width: 1407px;
+    height: 4316px;
+    aspect-ratio: 0.56;
+    object-fit: cover;
+}
+
+.line-up-page .img {
+    position: absolute;
+    top: 3437px;
+    left: 0;
+    width: 1407px;
+    height: 1012px;
+    aspect-ratio: 1.75;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-feeds {
+    top: 2894px;
+    left: 0;
+    width: 505px;
+    position: absolute;
+    height: 942px;
+    aspect-ratio: 1.05;
+    object-fit: cover;
+}
+
+.line-up-page .story-flyer-2 {
+    top: 3520px;
+    left: 0;
+    width: 339px;
+    height: 616px;
+    position: absolute;
+    aspect-ratio: 1.36;
+}
+
+.line-up-page .story-flyer-3 {
+    top: 3578px;
+    left: 1120px;
+    width: 287px;
+    height: 517px;
+    position: absolute;
+    aspect-ratio: 1.36;
+}
+
+.line-up-page .story-flyer-4 {
+    position: absolute;
+    top: 3809px;
+    left: 57px;
+    width: 523px;
+    height: 394px;
+    aspect-ratio: 1.33;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-feeds-2 {
+    top: 1217px;
+    left: 1044px;
+    width: 363px;
+    height: 648px;
+    position: absolute;
+    aspect-ratio: 0.92;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-feeds-3 {
+    top: 2131px;
+    left: 0;
+    width: 319px;
+    height: 624px;
+    position: absolute;
+    aspect-ratio: 0.92;
+    object-fit: cover;
+}
+
+.line-up-page .rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1438px;
+    height: 321px;
+    background-color: #2d1291;
+}
+
+.line-up-page .logo {
+    position: absolute;
+    top: 21px;
+    left: calc(50.00% - 362px);
+    width: 724px;
+    height: 260px;
+    aspect-ratio: 2.78;
+}
+
+.line-up-page .group {
+    position: absolute;
+    top: 69px;
+    left: 1172px;
+    width: 139px;
+    height: 183px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.line-up-page .text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    width: 126px;
+    height: 21px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.line-up-page .smc {
+    width: 137px;
+    height: 154px;
+    aspect-ratio: 0.89;
+    object-fit: cover;
+}
+
+.line-up-page .div {
+    position: absolute;
+    top: 130px;
+    left: 77px;
+    width: 99px;
+    height: 61px;
+    display: flex;
+    flex-direction: column;
+}
+
+.line-up-page .line {
+    margin-top: -10px;
+    width: 99px;
+    height: 10px;
+}
+
+.line-up-page .line-2 {
+    margin-top: 21px;
+    width: 99px;
+    height: 10px;
+}
+
+.line-up-page .line-3 {
+    margin-top: 20px;
+    width: 99px;
+    height: 10px;
+}
+
+.line-up-page .group-wrapper {
+    position: absolute;
+    top: 4006px;
+    left: 0;
+    width: 1438px;
+    height: 2022px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.line-up-page .group-2 {
+    margin-top: 176px;
+    width: 804px;
+    height: 1564px;
+    margin-left: -12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.line-up-page .text-wrapper-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -9px;
+    height: 86px;
+    width: 247px;
+    align-self: center;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 71px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.line-up-page .SPONSOR-PARTNERS {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10px;
+    height: 86px;
+    width: 794px;
+    align-self: center;
+    margin-top: 95px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 71px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.line-up-page .text-wrapper-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10px;
+    height: 86px;
+    width: 564px;
+    align-self: center;
+    margin-top: 95px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 71px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.line-up-page .BOOTH-TENANT {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -9px;
+    height: 86px;
+    width: 625px;
+    align-self: center;
+    margin-top: 95px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 71px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.line-up-page .group-3 {
+    margin-left: 117px;
+    width: 589.19px;
+    height: 111px;
+    margin-top: 95px;
+    display: flex;
+    gap: 18.6px;
+}
+
+.line-up-page .img-2 {
+    margin-top: 9.3px;
+    width: 93.28px;
+    height: 93.28px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.line-up-page .tiktok-logo-svg {
+    margin-top: 9.3px;
+    width: 93.28px;
+    height: 93.28px;
+    aspect-ratio: 1;
+}
+
+.line-up-page .whatsapp-svg {
+    width: 110.71px;
+    height: 111px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.line-up-page .gmail-icon-svg {
+    margin-top: 9.3px;
+    width: 124.37px;
+    height: 93.28px;
+    aspect-ratio: 1.33;
+    object-fit: cover;
+}
+
+.line-up-page .text-wrapper-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -19px;
+    height: 86px;
+    width: 513px;
+    align-self: center;
+    margin-top: 338.0px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 71px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.line-up-page .smc-colored {
+    margin-left: -19px;
+    height: 265px;
+    width: 235px;
+    align-self: center;
+    margin-top: 40px;
+    aspect-ratio: 0.89;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-story {
+    position: absolute;
+    top: 3147px;
+    left: calc(50.00% - 568px);
+    width: 1136px;
+    height: 474px;
+    aspect-ratio: 2.39;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-story-2 {
+    position: absolute;
+    top: 3206px;
+    left: -1676px;
+    width: 1344px;
+    height: 606px;
+    aspect-ratio: 2.22;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-feeds-4 {
+    position: absolute;
+    top: 368px;
+    left: 67px;
+    width: 1330px;
+    height: 378px;
+    aspect-ratio: 3.61;
+}
+
+.line-up-page .group-4 {
+    position: absolute;
+    top: 3651px;
+    left: calc(50.00% - 502px);
+    width: 1008px;
+    height: 185px;
+    box-shadow: 22px 23px 4px #0000006b;
+}
+
+.line-up-page .rectangle-2 {
+    position: absolute;
+    top: 0;
+    left: calc(50.00% - 504px);
+    width: 1006px;
+    height: 185px;
+    background-color: #8281fb;
+    border-radius: var(--size-radius-full);
+    border: 13px solid;
+    border-color: #ffffff;
+    box-shadow: 0px 4px 0px #00000040;
+}
+
+.line-up-page .text-wrapper-5 {
+    position: absolute;
+    top: 14px;
+    left: calc(50.00% - 427px);
+    width: 853px;
+    height: 158px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Baloo Thambi-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 86px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.line-up-page .salinan-dari-feeds-5 {
+    top: 2871px;
+    left: 964px;
+    width: 443px;
+    position: absolute;
+    height: 942px;
+    aspect-ratio: 1.05;
+    object-fit: cover;
+}
+
+.line-up-page .story-flyer-5 {
+    position: absolute;
+    top: 518px;
+    left: 1063px;
+    width: 344px;
+    height: 313px;
+    aspect-ratio: 1.2;
+}
+
+.line-up-page .story-flyer-6 {
+    position: absolute;
+    top: 518px;
+    left: 0;
+    width: 319px;
+    height: 313px;
+    aspect-ratio: 1.07;
+}
+
+.line-up-page .rectangle-3 {
+    position: absolute;
+    top: 831px;
+    left: 144px;
+    width: 1150px;
+    height: 1109px;
+}
+
+.line-up-page .rectangle-4 {
+    position: absolute;
+    top: 2012px;
+    left: calc(50.00% - 574px);
+    width: 1150px;
+    height: 1109px;
+    background-color: #ffffff;
+}
+
+.line-up-page .rectangle-5 {
+    position: absolute;
+    top: 2140px;
+    left: 155px;
+    width: 589px;
+    height: 279px;
+    background-color: #f9c74f;
+}
+
+.line-up-page .rectangle-6 {
+    position: absolute;
+    top: 2140px;
+    left: 750px;
+    width: 533px;
+    height: 279px;
+    background-color: #8281fb;
+}
+
+.line-up-page .rectangle-7 {
+    position: absolute;
+    top: 2423px;
+    left: 155px;
+    width: 513px;
+    height: 284px;
+    background-color: #8281fb;
+}
+
+.line-up-page .rectangle-8 {
+    position: absolute;
+    top: 2423px;
+    left: 674px;
+    width: 609px;
+    height: 284px;
+    background-color: #f176b0;
+}
+
+.line-up-page .rectangle-9 {
+    position: absolute;
+    top: 2711px;
+    left: 155px;
+    width: 1128px;
+    height: 284px;
+}
+
+.line-up-page .salinan-dari-story-3 {
+    top: 825px;
+    left: calc(50.00% - 572px);
+    width: 1146px;
+    height: 141px;
+    position: absolute;
+    aspect-ratio: 8.14;
+}
+
+.line-up-page .salinan-dari-story-4 {
+    top: 1812px;
+    left: calc(50.00% - 580px);
+    width: 1163px;
+    height: 143px;
+    position: absolute;
+    aspect-ratio: 8.14;
+}
+
+.line-up-page .rectangle-10 {
+    position: absolute;
+    top: 959px;
+    left: 155px;
+    width: 549px;
+    height: 277px;
+}
+
+.line-up-page .rectangle-11 {
+    position: absolute;
+    top: 1241px;
+    left: 155px;
+    width: 514px;
+    height: 283px;
+}
+
+.line-up-page .rectangle-12 {
+    position: absolute;
+    top: 1241px;
+    left: 674px;
+    width: 609px;
+    height: 283px;
+}
+
+.line-up-page .rectangle-13 {
+    position: absolute;
+    top: 1529px;
+    left: 155px;
+    width: 1128px;
+    height: 283px;
+}
+
+.line-up-page .rectangle-14 {
+    position: absolute;
+    top: 959px;
+    left: 709px;
+    width: 574px;
+    height: 277px;
+}
+
+.line-up-page .salinan-dari-story-6 {
+    position: absolute;
+    top: 1979px;
+    left: 146px;
+    width: 1146px;
+    height: 1142px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-story-7 {
+    position: absolute;
+    top: 2420px;
+    left: 664px;
+    width: 620px;
+    height: 301px;
+    aspect-ratio: 2.06;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-story-12 {
+    position: absolute;
+    top: 2138px;
+    left: 155px;
+    width: 601px;
+    height: 282px;
+    aspect-ratio: 2.13;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-story-13 {
+    position: absolute;
+    top: 2145px;
+    left: 745px;
+    width: 547px;
+    height: 284px;
+    aspect-ratio: 1.93;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-story-14 {
+    position: absolute;
+    top: 2405px;
+    left: 154px;
+    width: 526px;
+    height: 302px;
+    aspect-ratio: 1.74;
+    object-fit: cover;
+}
+
+.line-up-page .salinan-dari-story-15 {
+    position: absolute;
+    top: 2707px;
+    left: calc(50.00% - 548px);
+    width: 1098px;
+    height: 288px;
+    aspect-ratio: 3.81;
+    object-fit: cover;
+}
+
+/* Line-up page: lebar menyesuaikan di mobile */
+@media (max-width: 1023px) {
+    .line-up-page {
+        min-width: 0;
+        min-height: 0;
+    }
+
+    .line-up-page .salinan-dari-story {
+        left: 0;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .line-up-page .salinan-dari-story-2 {
+        left: 0;
+        width: 100%;
+        max-width: 100vw;
+    }
+}
