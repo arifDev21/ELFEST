@@ -1,26 +1,37 @@
-document.addEventListener('DOMContentLoaded', function () {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
-  }
+(function () {
   var loadingRemoved = false;
   function removeLoading() {
     if (loadingRemoved) return;
     loadingRemoved = true;
     document.documentElement.classList.remove('loading');
   }
-  var navbarEl = document.getElementById('navbar');
-  if (navbarEl) {
-    loadComponent('navbar', '/navbar.html', function () {
-      setupNavbarFunctionality();
+
+  function init() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+    }
+    var navbarEl = document.getElementById('navbar');
+    if (navbarEl) {
+      var base = window.location.href.replace(/[^/]+$/, '') || './';
+      loadComponent('navbar', base + 'navbar.html', function () {
+        setupNavbarFunctionality();
+        removeLoading();
+      }, removeLoading);
+      loadComponent('footer', base + 'footer.html');
+    } else {
       removeLoading();
-    }, removeLoading);
-    loadComponent('footer', '/footer.html');
-  } else {
-    removeLoading();
+    }
+    setupHistoryNavigation();
+    setTimeout(removeLoading, 400);
   }
-  setupHistoryNavigation();
-  setTimeout(removeLoading, 1200);
-});
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('load', removeLoading);
+})();
 
 function loadComponent(id, url, callback, onError) {
   var element = document.getElementById(id);

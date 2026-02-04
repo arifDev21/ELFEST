@@ -8,7 +8,7 @@ body>*:not(.page-loader) {
   transition: opacity 0.15s ease-out;
 }
 
-/* Global: loader overlay – backdrop gelap, kotak logo di tengah (bukan full ungu) */
+/* Global: loader – hanya logo + shimmer, tanpa background */
 .page-loader {
   position: fixed;
   inset: 0;
@@ -16,7 +16,7 @@ body>*:not(.page-loader) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(20, 8, 60, 0.98);
+  background: transparent;
   transition: opacity 0.25s ease-out;
 }
 
@@ -29,10 +29,6 @@ html:not(.loading) .page-loader {
   position: relative;
   width: min(280px, 75vw);
   height: min(100px, 28vw);
-  padding: 1.5rem;
-  border-radius: 16px;
-  background: rgba(45, 18, 144, 0.6);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
 .page-loader-logo {
