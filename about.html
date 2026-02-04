@@ -4,28 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html.loading body {
       background: #0c0c10 !important;
     }
   </style>
-  <title>About</title>
-  <script src="https://cdn.tailwindcss.com" defer></script>
   <link rel="stylesheet" href="components.css" />
   <style>
-    html,
-    body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-
-    #container-base {
-      max-width: 100%;
-      width: 100%;
-    }
-
     .background-base {
-      background-image: url("/assets/about/2026/background.png");
+      background-image: url("assets/about/2026/background.png");
       background-size: cover;
     }
 
@@ -48,17 +37,19 @@
     rel="stylesheet" />
 </head>
 
-<body class="min-h-screen flex flex-col relative bg-[#2D1290] overflow-x-hidden">
+<body class="min-h-screen flex flex-col relative bg-[#2D1290]">
   <script src="components.js"></script>
-  <nav id="navbar" class="z-50"></nav>
-  <div class="absolute top-24 left-0 right-0 w-full flex justify-center z-40 px-2 box-border">
-    <img src="./assets/about/2026/text-about-us.png" alt="header-about" class="object-contain max-w-full w-[90%]"
-      loading="lazy" />
+  <nav id="navbar" class="z-50">
+    <!-- <button id="menu-toggle">Toggle Menu</button> -->
+    <!-- <div id="menu" class="hidden">Menu Content</div> -->
+  </nav>
+  <!-- Konten halaman di sini -->
+  <div class="absolute top-24 w-full min flex justify-center z-40">
+    <img src="./assets/about/2026/text-about-us.png" alt="header-about" class="object-cover" />
   </div>
 
-  <div id="container-base"
-    class="relative flex justify-center overflow-x-hidden overflow-y-auto background-base w-full max-w-full box-border">
-    <div class="mt-24 min-[428px]:mt-52 w-full max-w-full box-border 
+  <div id="container-base" class="relative flex justify-center overflow-hidden background-base">
+    <div class="mt-24 min-[428px]:mt-52 
         min-[768px]:mt-32
         min-[820px]:mt-[148px]
         min-[1114px]:mt-[180px] 
@@ -66,34 +57,34 @@
         min-[1439px]:mt-[635px]
         min-[1920px]:mt-[250px] 
         min-[2048px]:mt-[200px]">
-      <div id="image-konser" class="mt-[20px] flex justify-center items-center 2xl:mt-10 z-10">
+      <div id="image-konser" class="mt-[20px] flex justify-center items-center 2xl:mt-10 z-50">
         <img class="w-[84%] h-[84%] 
             md:mt-16 lg:mt-20 2xl:mt-24
             min-[1920px]:w-[60%]
-            min-[2048px]:mt-32 z-10" src="assets/about/2026/image-under-about-us.png" alt="image-konser-page-about"
-          loading="lazy" />
+            min-[2048px]:mt-32 z-50" src="assets/about/2026/image-under-about-us.png" alt="image-konser-page-about" />
       </div>
 
       <div class=" flex justify-center mt-5
           min-[768px]:mt-10 min-[1920px]:mt-20:">
-        <img src="assets/about/2026/text-paragraf.png" alt="text" loading="lazy" class="
+        <img src="/assets/about/2026/text-paragraf.png" alt="text" class="
             w-[84%]
             min-[1920px]:w-[60%]
           " />
       </div>
 
       <div class="-mt-6 min-[1280px]:mb-20 min-[1920px]:mb-36">
-        <img src="./assets/about/2026/text-history-with-leaf.png" alt="history-with-leaf" class="w-[100%]"
-          loading="lazy" />
+        <img src="./assets/about/2026/text-history-with-leaf.png" alt="history-with-leaf" class="w-[100%]
+            " />
       </div>
 
       <div class="relative z-40 -mt-6 min-[1280px]:mb-20 min-[1920px]:mb-60 flex justify-center min-[768px]:mb-12">
-        <img src="./assets/about/2026/list-history.png" alt="history-list" class="w-[84%] min-[1920px]:w-[60%]"
-          loading="lazy" />
+        <img src="./assets/about/2026/list-history.png" alt="history-list" class="w-[84%]
+            min-[1920px]:w-[60%]
+            " />
       </div>
 
       <div class="relative z-20 space-y-3 p-7 mb-12  min-[768px]:mb-20 min-[1280px]:mb-28 min-[1920px]:mb-32">
-        <img src="./assets/about/2026/button.png" loading="lazy" alt="Buy Your Ticket Here" class="sm:max-w-md max-w-xs mx-auto w-[84%]
+        <img src="./assets/about/2026/button.png" alt="Buy Your Ticket Here" class="sm:max-w-md max-w-xs mx-auto w-[84%]
             min-[1920px]:w-[1200px]
             min-[1920px]:h-auto
             " style="cursor: pointer" onclick="window.open('https://snaptix.id/events/elfest-2026', '_blank');" />
@@ -101,7 +92,7 @@
     </div>
 
     <!-- Decoration Ballon -->
-    <img loading="lazy" src="assets/about/2026/ballon.png" alt="balloon-left" class="absolute -left-8
+    <img src="assets/about/2026/ballon.png" alt="balloon-left" class="absolute -left-8
         min-[768px]:-left-16
         min-[768px]:w-80
         min-[1280px]:w-96
@@ -110,7 +101,7 @@
         min-[1920px]:w-[500px]
         min-[1920px]:-left-24
         top-[19%] w-40 -translate-x-1/4" />
-    <img loading="lazy" src="assets/about/2026/ballon.png" alt="balloon-right" class="absolute -right-[118px] bottom-[40%]
+    <img src="assets/about/2026/ballon.png" alt="balloon-right" class="absolute -right-[118px] bottom-[40%]
         min-[375px]:bottom-[40.5%]
         min-[393px]:bottom-[41%]
         min-[428px]:bottom-[38%]
@@ -128,7 +119,7 @@
 
     <!-- Backgound image for button but the ticket-->
 
-    <img loading="lazy" src="assets/about/2026/background-in-bottom.png" alt="background-button" class="absolute -bottom-36
+    <img src="assets/about/2026/background-in-bottom.png" alt="background-button" class="absolute -bottom-36
         min-[768px]:-bottom-72
         min-[820px]:-bottom-[350px]
         min-[1024px]:-bottom-[480px]
@@ -137,13 +128,13 @@
         w-full h-auto z-0 pointer-events-none" />
 
     <!-- Under button buy the ticket-->
-    <img loading="lazy" src="assets/about/2026/big-leaf.png" alt="balloon-left" class="absolute left-8 bottom-0 w-40 
+    <img src="assets/about/2026/big-leaf.png" alt="balloon-left" class="absolute left-8 bottom-0 w-40 
         min-[768px]:w-60
         min-[1024px]:w-80
         min-[1114px]:w-80
         min-[1920px]:w-[500px]
         -translate-x-1/4" />
-    <img loading="lazy" src="assets/about/2026/big-leaf-with-star.png" alt="balloon-right" class="absolute -right-[40px] bottom-0
+    <img src="assets/about/2026/big-leaf-with-star.png" alt="balloon-right" class="absolute -right-[40px] bottom-0
         w-40
         min-[768px]:w-60
         min-[768px]:-right-16
@@ -159,7 +150,7 @@
   <!--Call the component footer-->
   <div id="footer" class="bottom-0 w-full z-50"></div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
