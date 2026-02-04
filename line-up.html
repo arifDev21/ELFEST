@@ -18,10 +18,9 @@
 </head>
 
 <style>
-    html,
-    body {
-        overflow-x: hidden;
-    }
+    html, body { overflow-x: hidden; }
+    html.loading body { opacity: 0; }
+    body { transition: opacity 0.15s ease-out; }
 
     /* Offset footer overlay: ubah nilai di sini untuk atur kanan/kiri/bawah */
     .footer-overlay-wrapper {

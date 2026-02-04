@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,11 +7,9 @@
   <title>About</title>
   <script src="https://cdn.tailwindcss.com" defer></script>
   <style>
-    html,
-    body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
+    html, body { overflow-x: hidden; max-width: 100%; }
+    html.loading body { opacity: 0; }
+    body { transition: opacity 0.15s ease-out; }
 
     #container-base {
       max-width: 100%;

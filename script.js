@@ -2,14 +2,22 @@ document.addEventListener('DOMContentLoaded', function () {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
   }
-  loadComponent('navbar', 'navbar.html', () => {
+  var loadingRemoved = false;
+  function removeLoading() {
+    if (loadingRemoved) return;
+    loadingRemoved = true;
+    document.documentElement.classList.remove('loading');
+  }
+  loadComponent('navbar', 'navbar.html', function () {
     setupNavbarFunctionality();
-  });
+    removeLoading();
+  }, removeLoading);
   loadComponent('footer', 'footer.html');
   setupHistoryNavigation();
+  setTimeout(removeLoading, 2500);
 });
 
-function loadComponent(id, url, callback) {
+function loadComponent(id, url, callback, onError) {
   const element = document.getElementById(id);
   if (!element) return;
   fetch(url)
@@ -18,7 +26,10 @@ function loadComponent(id, url, callback) {
       element.innerHTML = data;
       if (callback) callback();
     })
-    .catch((error) => console.error(`Error loading ${url}:`, error));
+    .catch(function (error) {
+      console.error('Error loading ' + url + ':', error);
+      if (onError) onError();
+    });
 }
 
 function setupNavbarFunctionality() {

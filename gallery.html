@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,14 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet" />
   <style>
-    html,
-    body {
-      overflow-x: hidden;
-    }
-
-    .titan-one {
-      font-family: 'Titan One', sans-serif;
-    }
+    html, body { overflow-x: hidden; }
+    html.loading body { opacity: 0; }
+    body { transition: opacity 0.15s ease-out; }
+    .titan-one { font-family: 'Titan One', sans-serif; }
   </style>
 </head>
 

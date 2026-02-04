@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,8 @@
 
   <style>
     html { overflow-x: hidden; }
-    body { overflow-x: hidden; }
+    html.loading body { opacity: 0; }
+    body { overflow-x: hidden; transition: opacity 0.15s ease-out; }
 
     .bg-hero {
       background-image: url("/assets/home/elfest-vol-3/Story%20flyer%201.svg");
