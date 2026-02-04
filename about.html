@@ -7,9 +7,13 @@
   <title>About</title>
   <script src="https://cdn.tailwindcss.com" defer></script>
   <style>
-    html,
-    body {
+    html, body {
       overflow-x: hidden;
+      max-width: 100%;
+    }
+    #container-base {
+      max-width: 100%;
+      width: 100%;
     }
 
     .background-base {
@@ -38,13 +42,12 @@
 
 <body class="min-h-screen flex flex-col relative bg-[#2D1290] overflow-x-hidden">
   <nav id="navbar" class="z-50"></nav>
-  <!-- Konten halaman di sini -->
-  <div class="absolute top-24 w-full min flex justify-center z-40">
-    <img src="./assets/about/2026/text-about-us.png" alt="header-about" class="object-cover" loading="lazy" />
+  <div class="absolute top-24 left-0 right-0 w-full flex justify-center z-40 px-2 box-border">
+    <img src="./assets/about/2026/text-about-us.png" alt="header-about" class="object-contain max-w-full w-[90%]" loading="lazy" />
   </div>
 
-  <div id="container-base" class="relative flex justify-center overflow-x-hidden overflow-y-auto background-base">
-    <div class="mt-24 min-[428px]:mt-52 
+  <div id="container-base" class="relative flex justify-center overflow-x-hidden overflow-y-auto background-base w-full max-w-full box-border">
+    <div class="mt-24 min-[428px]:mt-52 w-full max-w-full box-border 
         min-[768px]:mt-32
         min-[820px]:mt-[148px]
         min-[1114px]:mt-[180px] 

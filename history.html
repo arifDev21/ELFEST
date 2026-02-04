@@ -12,9 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <style>
-    html,
-    body {
+    html, body {
       overflow-x: hidden;
+      max-width: 100%;
     }
 
     .body {
@@ -25,13 +25,13 @@
   </style>
 </head>
 
-<body class="bg-[#2D1291] overflow-x-hidden min-h-screen flex flex-col">
-  <div class="relative flex-1">
+  <body class="bg-[#2D1291] overflow-x-hidden min-h-screen flex flex-col max-w-full">
+  <div class="relative flex-1 w-full max-w-full overflow-x-hidden">
     <img src="./assets/explore/background.webp" class="absolute inset-0 w-full h-full object-cover min-h-full"
       loading="lazy" alt="" />
     <nav id="navbar" class="z-50"></nav>
-    <div class="relative z-10 pb-20 overflow-x-hidden">
-      <img src="./assets/history/history.png" alt="History" loading="lazy">
+    <div class="relative z-10 pb-20 overflow-x-hidden w-full max-w-full box-border px-2">
+      <img src="./assets/history/history.png" alt="History" loading="lazy" class="w-full max-w-full h-auto">
       <img src="./assets/history/ikan.png" alt="Ikan" class="absolute top-20 right-0 w-16" loading="lazy">
 
       <!-- INi button nya buat pindah history -->
@@ -44,8 +44,8 @@
 
 
       <!-- HISTORY 2025 -->
-      <div class="max-w-sm mx-auto relative z-20" id="history-2025">
-        <img src="./assets/history/history-2025.png" alt="History 2025" loading="lazy">
+      <div class="max-w-sm mx-auto relative z-20 w-full px-2" id="history-2025">
+        <img src="./assets/history/history-2025.png" alt="History 2025" loading="lazy" class="w-full max-w-full">
         <img src="./assets/history/photo-2025.png" alt="Elfest 2025" class="w-full mt-10" loading="lazy">
         <p class="font-semibold text-gray-100 text-justify mt-5">ELFEST 2025 digelar pada 26 April 2025 di Secapa AD
           Bandung dengan tema dunia khayalan Wonderland-Z. Festival ini
@@ -68,8 +68,8 @@
       <!-- HISTORY 2025 -->
 
       <!-- HISTORY 2024 -->
-      <div class="max-w-sm mx-auto relative z-20 hidden" id="history-2024">
-        <img src="./assets/history/history-2024.png" alt="History 2024" loading="lazy">
+      <div class="max-w-sm mx-auto relative z-20 hidden w-full px-2" id="history-2024">
+        <img src="./assets/history/history-2024.png" alt="History 2024" loading="lazy" class="w-full max-w-full">
         <img src="./assets/history/photo-2024.png" alt="Elfest 2024" class="w-full mt-10" loading="lazy">
         <p class="font-semibold text-gray-100 text-justify mt-5">ELFEST 2024 digelar pada 18 Mei 2024 di Lapangan Brigif
           15

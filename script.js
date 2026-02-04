@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function loadComponent(id, url, callback) {
   const element = document.getElementById(id);
+  if (!element) return;
   fetch(url)
     .then((response) => response.text())
     .then((data) => {
       element.innerHTML = data;
-      if (callback) callback(); // Panggil callback setelah konten dimuat
+      if (callback) callback();
     })
     .catch((error) => console.error(`Error loading ${url}:`, error));
 }
