@@ -15,12 +15,14 @@
     </script>
 
     <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="components.css" />
 </head>
 
 <style>
-    html, body { overflow-x: hidden; }
-    html.loading body { opacity: 0; }
-    body { transition: opacity 0.15s ease-out; }
+    html,
+    body {
+        overflow-x: hidden;
+    }
 
     /* Offset footer overlay: ubah nilai di sini untuk atur kanan/kiri/bawah */
     .footer-overlay-wrapper {
@@ -458,6 +460,7 @@
 </style>
 
 <body class="min-h-screen flex flex-col relative bg-[#2D1290] overflow-x-hidden">
+    <script src="components.js"></script>
     <nav id="navbar" class="z-50"></nav>
 
     <div class="line-up-page relative w-full flex-1 overflow-x-hidden overflow-y-auto bg-hero max-w-full">

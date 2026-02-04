@@ -8,11 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
     loadingRemoved = true;
     document.documentElement.classList.remove('loading');
   }
-  loadComponent('navbar', 'navbar.html', function () {
-    setupNavbarFunctionality();
+  var navbarEl = document.getElementById('navbar');
+  if (navbarEl) {
+    loadComponent('navbar', 'navbar.html', function () {
+      setupNavbarFunctionality();
+      removeLoading();
+    }, removeLoading);
+    loadComponent('footer', 'footer.html');
+  } else {
     removeLoading();
-  }, removeLoading);
-  loadComponent('footer', 'footer.html');
+  }
   setupHistoryNavigation();
   setTimeout(removeLoading, 2500);
 });

@@ -11,10 +11,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="components.css" />
   <style>
     html, body { overflow-x: hidden; max-width: 100%; }
-    html.loading body { opacity: 0; }
-    body { transition: opacity 0.15s ease-out; }
 
     .body {
       font-family: "Inter", sans-serif;
@@ -25,6 +24,7 @@
 </head>
 
   <body class="bg-[#2D1291] overflow-x-hidden min-h-screen flex flex-col max-w-full">
+  <script src="components.js"></script>
   <div class="relative flex-1 w-full max-w-full overflow-x-hidden">
     <img src="./assets/explore/background.webp" class="absolute inset-0 w-full h-full object-cover min-h-full"
       loading="lazy" alt="" />

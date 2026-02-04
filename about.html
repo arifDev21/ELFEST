@@ -6,10 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About</title>
   <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="stylesheet" href="components.css" />
   <style>
-    html, body { overflow-x: hidden; max-width: 100%; }
-    html.loading body { opacity: 0; }
-    body { transition: opacity 0.15s ease-out; }
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
 
     #container-base {
       max-width: 100%;
@@ -41,6 +44,7 @@
 </head>
 
 <body class="min-h-screen flex flex-col relative bg-[#2D1290] overflow-x-hidden">
+  <script src="components.js"></script>
   <nav id="navbar" class="z-50"></nav>
   <div class="absolute top-24 left-0 right-0 w-full flex justify-center z-40 px-2 box-border">
     <img src="./assets/about/2026/text-about-us.png" alt="header-about" class="object-contain max-w-full w-[90%]"
