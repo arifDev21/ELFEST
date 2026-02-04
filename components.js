@@ -1,3 +1,21 @@
+/* Google Analytics 4 – ganti dengan Measurement ID Anda (G-XXXXXXXXXX) */
+var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
+
+(function ga4() {
+  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.indexOf('G-') !== 0) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID, {
+    page_path: window.location.pathname || '/',
+    page_title: document.title || ''
+  });
+})();
+
 /* Global component: inject loader HTML sekali di semua halaman */
 (function () {
   var bubbles = '';
