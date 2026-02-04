@@ -10,25 +10,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet" />
   <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
     .titan-one {
       font-family: 'Titan One', sans-serif;
     }
   </style>
 </head>
 
-<body class="bg-[#2D1291]">
-  <div class="relative">
-    <img src="./assets/explore/background.webp" class="absolute object-cover h-full w-auto" loading="lazy" alt="" />
-    <nav id="navbar">
-      <button id="menu-toggle">Toggle Menu</button>
-      <div id="menu" class="hidden">Menu Content</div>
-    </nav>
-    <!-- Konten halaman di sini -->
-    <div class="relative overflow-hidden ">
+<body class="bg-[#2D1291] overflow-x-hidden min-h-screen flex flex-col">
+  <div class="relative flex-1">
+    <img src="./assets/explore/background.webp" class="absolute inset-0 w-full h-full object-cover min-h-full"
+      loading="lazy" alt="" />
+    <nav id="navbar" class="z-50"></nav>
+    <div class="relative overflow-x-hidden">
       <img src="./assets/explore/gallery.png" class="w-96 mx-auto relative" loading="lazy" alt="Gallery" />
-      <img src="./assets/explore/elfest-2025-ambience.png" class="w-96 mx-auto relative mb-10" loading="lazy" alt="Elfest 2025" />
+      <img src="./assets/explore/elfest-2025-ambience.png" class="w-96 mx-auto relative mb-10" loading="lazy"
+        alt="Elfest 2025" />
       <img src="./assets/explore/terumbu-karang.png" class="w-14 right-0 top-[100px] absolute" loading="lazy" alt="" />
-      <img src="./assets/explore/terumbu-karang.png" class="w-14 left-0 top-[100px] scale-x-[-1] absolute" loading="lazy" alt="" />
+      <img src="./assets/explore/terumbu-karang.png" class="w-14 left-0 top-[100px] scale-x-[-1] absolute"
+        loading="lazy" alt="" />
       <!-- Elfest Recap 2024 -->
       <div class="relative">
         <img src="./assets/explore/bubble.png" class="w-14 right-0 top-[80px] absolute" loading="lazy" alt="" />
@@ -42,9 +46,11 @@
       </div>
 
 
-      <img src="./assets/explore/elfest-2025-aftermovie.png" class="w-96 mx-auto relative mt-20" loading="lazy" alt="" />
+      <img src="./assets/explore/elfest-2025-aftermovie.png" class="w-96 mx-auto relative mt-20" loading="lazy"
+        alt="" />
       <img src="./assets/explore/terumbu-karang.png" class="w-14 right-0 top-[100px] absolute" loading="lazy" alt="" />
-      <img src="./assets/explore/terumbu-karang.png" class="w-14 left-0 top-[100px] scale-x-[-1] absolute" loading="lazy" alt="" />
+      <img src="./assets/explore/terumbu-karang.png" class="w-14 left-0 top-[100px] scale-x-[-1] absolute"
+        loading="lazy" alt="" />
       <!-- Elfest Recap 2024 -->
       <div class="relative">
         <img src="./assets/explore/bubble.png" class="w-14 right-0 top-[80px] absolute" loading="lazy" alt="" />
@@ -59,7 +65,8 @@
 
       <img src="./assets/explore/elfest-2024-ambience.png" class="w-96 mx-auto relative mt-20" />
       <img src="./assets/explore/terumbu-karang.png" class="w-14 right-0 top-[100px] absolute" loading="lazy" alt="" />
-      <img src="./assets/explore/terumbu-karang.png" class="w-14 left-0 top-[100px] scale-x-[-1] absolute" loading="lazy" alt="" />
+      <img src="./assets/explore/terumbu-karang.png" class="w-14 left-0 top-[100px] scale-x-[-1] absolute"
+        loading="lazy" alt="" />
       <!-- Elfest Recap 2024 -->
       <div class="relative">
         <img src="./assets/explore/bubble.png" class="w-14 right-0 top-[80px] absolute" loading="lazy" alt="" />
@@ -76,7 +83,8 @@
 
       <!-- Elfest Recap 2024 -->
       <div class="relative">
-        <img src="./assets/explore/elfest-2024-aftermovie.png" class="w-96 mx-auto relative mt-20 mb-5" loading="lazy" alt="" />
+        <img src="./assets/explore/elfest-2024-aftermovie.png" class="w-96 mx-auto relative mt-20 mb-5" loading="lazy"
+          alt="" />
 
         <img src="./assets/explore/coral.png" class="w-14 right-0 top-[20px]  absolute" />
         <img src="./assets/explore/coral.png" class="w-14 left-0 top-[20px] scale-x-[-1] absolute" />
@@ -88,7 +96,8 @@
         </div>
         <img src="./assets/explore/bottom-bg.png" class="w-full bottom-0 absolute" loading="lazy" alt="" />
         <img src="./assets/explore/bottom-corner.png" class="w-32 right-0 bottom-0 absolute" loading="lazy" alt="" />
-        <img src="./assets/explore/bottom-corner.png" class="w-32 left-0 bottom-0 scale-x-[-1] absolute" loading="lazy" alt="" />
+        <img src="./assets/explore/bottom-corner.png" class="w-32 left-0 bottom-0 scale-x-[-1] absolute" loading="lazy"
+          alt="" />
 
         <a href="https://snaptix.id/events/elfest-2026" target="_blank">
           <img src="./assets/explore/button.png" class="w-72 mx-auto relative py-10" />
@@ -148,8 +157,10 @@
       <div class="relative mt-28 sm:mt-48 hidden">
         <div class="mb-10 relative w-fit mx-auto">
           <img src="./assets/explore/elfest-recap-2025.png" class="mx-auto w-96" loading="lazy" alt="" />
-          <img src="./assets/explore/bubble-right.png" class="absolute -right-5 w-20 top-0 -translate-y-5" loading="lazy" alt="" />
-          <img src="./assets/explore/bubble-left.png" class="absolute -left-5 w-20 top-0 -translate-y-5" loading="lazy" alt="" />
+          <img src="./assets/explore/bubble-right.png" class="absolute -right-5 w-20 top-0 -translate-y-5"
+            loading="lazy" alt="" />
+          <img src="./assets/explore/bubble-left.png" class="absolute -left-5 w-20 top-0 -translate-y-5" loading="lazy"
+            alt="" />
         </div>
 
         <div class="aspect-video w-full sm:max-w-md mx-auto relative z-10 sm:px-10 px-8">
@@ -173,7 +184,8 @@
       <div class="mt-28 relative max-w-sm mx-auto hidden">
         <img src="./assets/explore/jellyfish.png" loading="lazy"
           class="absolute top-0 -translate-y-10 left-2 w-24 object-cover sm:p-10 px-5" />
-        <img src="./assets/explore/elfest-ambience-2025.png" alt="Elfest 2025's Ambiences" class="w-96 mb-10 mx-auto" loading="lazy" />
+        <img src="./assets/explore/elfest-ambience-2025.png" alt="Elfest 2025's Ambiences" class="w-96 mb-10 mx-auto"
+          loading="lazy" />
         <div class="w-full sm:max-w-2xl max-w-xs mx-auto px-4 aspect-video">
           <div class="relative z-10">
             <!-- Carousel container -->

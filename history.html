@@ -12,6 +12,11 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
     .body {
       font-family: "Inter", sans-serif;
       font-optical-sizing: auto;
@@ -20,14 +25,12 @@
   </style>
 </head>
 
-<body class="bg-[#2D1291]">
-  <div class="relative">
-    <img src="./assets/explore/background.webp" class="absolute object-cover h-full w-auto" loading="lazy" alt="" />
-    <nav id="navbar">
-      <button id="menu-toggle">Toggle Menu</button>
-      <div id="menu" class="hidden">Menu Content</div>
-    </nav>
-    <div class="relative z-10 pb-20">
+<body class="bg-[#2D1291] overflow-x-hidden min-h-screen flex flex-col">
+  <div class="relative flex-1">
+    <img src="./assets/explore/background.webp" class="absolute inset-0 w-full h-full object-cover min-h-full"
+      loading="lazy" alt="" />
+    <nav id="navbar" class="z-50"></nav>
+    <div class="relative z-10 pb-20 overflow-x-hidden">
       <img src="./assets/history/history.png" alt="History" loading="lazy">
       <img src="./assets/history/ikan.png" alt="Ikan" class="absolute top-20 right-0 w-16" loading="lazy">
 

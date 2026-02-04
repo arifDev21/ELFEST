@@ -7,6 +7,11 @@
   <title>About</title>
   <script src="https://cdn.tailwindcss.com" defer></script>
   <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
     .background-base {
       background-image: url("/assets/about/2026/background.png");
       background-size: cover;
@@ -31,17 +36,14 @@
     rel="stylesheet" />
 </head>
 
-<body class="min-h-screen flex flex-col relative bg-[#2D1290]">
-  <nav id="navbar" class="z-100">
-    <!-- <button id="menu-toggle">Toggle Menu</button> -->
-    <!-- <div id="menu" class="hidden">Menu Content</div> -->
-  </nav>
+<body class="min-h-screen flex flex-col relative bg-[#2D1290] overflow-x-hidden">
+  <nav id="navbar" class="z-50"></nav>
   <!-- Konten halaman di sini -->
   <div class="absolute top-24 w-full min flex justify-center z-40">
     <img src="./assets/about/2026/text-about-us.png" alt="header-about" class="object-cover" loading="lazy" />
   </div>
 
-  <div id="container-base" class="relative flex justify-center overflow-hidden background-base">
+  <div id="container-base" class="relative flex justify-center overflow-x-hidden overflow-y-auto background-base">
     <div class="mt-24 min-[428px]:mt-52 
         min-[768px]:mt-32
         min-[820px]:mt-[148px]
