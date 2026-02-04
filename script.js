@@ -10,24 +10,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   var navbarEl = document.getElementById('navbar');
   if (navbarEl) {
-    loadComponent('navbar', 'navbar.html', function () {
+    loadComponent('navbar', '/navbar.html', function () {
       setupNavbarFunctionality();
       removeLoading();
     }, removeLoading);
-    loadComponent('footer', 'footer.html');
+    loadComponent('footer', '/footer.html');
   } else {
     removeLoading();
   }
   setupHistoryNavigation();
-  setTimeout(removeLoading, 2500);
+  setTimeout(removeLoading, 1200);
 });
 
 function loadComponent(id, url, callback, onError) {
-  const element = document.getElementById(id);
+  var element = document.getElementById(id);
   if (!element) return;
   fetch(url)
-    .then((response) => response.text())
-    .then((data) => {
+    .then(function (response) { return response.text(); })
+    .then(function (data) {
       element.innerHTML = data;
       if (callback) callback();
     })
