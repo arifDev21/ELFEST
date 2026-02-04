@@ -1,14 +1,13 @@
-/* Global: sembunyikan hanya konten (bukan loader) saat loading */
+/* Saat loading: konten tetap ada tapi tertutup loader (blur halaman di belakang) */
 html.loading body>*:not(.page-loader) {
-  opacity: 0;
   pointer-events: none;
 }
 
 body>*:not(.page-loader) {
-  transition: opacity 0.15s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
-/* Global: loader – hanya logo + shimmer, tanpa background */
+/* Loader: blur transparan – halaman yang dituju terlihat blur di belakang */
 .page-loader {
   position: fixed;
   inset: 0;
@@ -16,65 +15,215 @@ body>*:not(.page-loader) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  transition: opacity 0.25s ease-out;
+  background: rgba(45, 18, 144, 0.18) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 1;
+  transition: opacity 0.35s ease-out;
+  will-change: opacity;
+  overflow: hidden;
 }
 
 html:not(.loading) .page-loader {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.35s ease-out;
+}
+
+/* Gelembung dari bawah – halus, ada drift horizontal */
+.page-loader-bubbles {
+  position: absolute;
+  inset: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.page-loader-bubble {
+  position: absolute;
+  bottom: -24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.08));
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  animation: bubble-rise 5s cubic-bezier(0.33, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.page-loader-bubble:nth-child(1) {
+  left: 8%;
+  width: 14px;
+  height: 14px;
+  animation-delay: 0s;
+  animation-duration: 5.2s;
+}
+
+.page-loader-bubble:nth-child(2) {
+  left: 22%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0.5s;
+  animation-duration: 5.8s;
+}
+
+.page-loader-bubble:nth-child(3) {
+  left: 38%;
+  width: 11px;
+  height: 11px;
+  animation-delay: 1s;
+  animation-duration: 5s;
+}
+
+.page-loader-bubble:nth-child(4) {
+  left: 52%;
+  width: 24px;
+  height: 24px;
+  animation-delay: 0.2s;
+  animation-duration: 6s;
+}
+
+.page-loader-bubble:nth-child(5) {
+  left: 68%;
+  width: 16px;
+  height: 16px;
+  animation-delay: 0.8s;
+  animation-duration: 5.4s;
+}
+
+.page-loader-bubble:nth-child(6) {
+  left: 82%;
+  width: 18px;
+  height: 18px;
+  animation-delay: 0.3s;
+  animation-duration: 5.6s;
+}
+
+.page-loader-bubble:nth-child(7) {
+  left: 15%;
+  width: 12px;
+  height: 12px;
+  animation-delay: 1.2s;
+  animation-duration: 5.3s;
+}
+
+.page-loader-bubble:nth-child(8) {
+  left: 58%;
+  width: 10px;
+  height: 10px;
+  animation-delay: 0.6s;
+  animation-duration: 5.1s;
+}
+
+.page-loader-bubble:nth-child(9) {
+  left: 75%;
+  width: 22px;
+  height: 22px;
+  animation-delay: 0.4s;
+  animation-duration: 5.9s;
+}
+
+.page-loader-bubble:nth-child(10) {
+  left: 42%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 0.9s;
+  animation-duration: 5.5s;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translate(0, 0) scale(0.7);
+    opacity: 0.5;
+  }
+
+  8% {
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: translate(8px, -50vh) scale(1);
+    opacity: 0.7;
+  }
+
+  92% {
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translate(-6px, -105vh) scale(1.05);
+    opacity: 0;
+  }
 }
 
 .page-loader-inner {
   position: relative;
+  z-index: 2;
+  width: min(280px, 75vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.page-loader-logo-wrap {
+  position: relative;
   width: min(280px, 75vw);
   height: min(100px, 28vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loader-logo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -32px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: loader-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .page-loader-logo {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  animation: loader-logo-pulse 1.8s ease-in-out infinite;
+  animation: loader-logo-breathe 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  backface-visibility: hidden;
+  will-change: transform;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
 }
 
-.page-loader-shimmer {
-  position: absolute;
-  inset: -15%;
-  border-radius: inherit;
-  background: linear-gradient(105deg,
-      transparent 0%,
-      transparent 35%,
-      rgba(255, 255, 255, 0.08) 45%,
-      rgba(255, 255, 255, 0.28) 50%,
-      rgba(255, 255, 255, 0.08) 55%,
-      transparent 65%,
-      transparent 100%);
-  background-size: 200% 100%;
-  animation: loader-shimmer 2s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes loader-logo-pulse {
+/* Napas halus: scale + sedikit gerak horizontal */
+@keyframes loader-logo-breathe {
 
   0%,
   100% {
-    opacity: 0.9;
-    transform: scale(1);
+    transform: scale(1) translateX(0);
+    opacity: 0.95;
   }
 
   50% {
+    transform: scale(1.04) translateX(4px);
     opacity: 1;
-    transform: scale(1.02);
   }
 }
 
-@keyframes loader-shimmer {
-  0% {
-    background-position: 200% 0;
+@keyframes loader-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
   }
 
-  100% {
-    background-position: -200% 0;
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
   }
 }

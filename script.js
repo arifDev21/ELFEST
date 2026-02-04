@@ -1,9 +1,33 @@
 (function () {
   var loadingRemoved = false;
+  var loadingStart = Date.now();
+  var minLoadingMs = 2800;
+  var removeTimer = null;
+  var pageLoaded = false;
+
   function removeLoading() {
     if (loadingRemoved) return;
+    var elapsed = Date.now() - loadingStart;
+    var wait = Math.max(0, minLoadingMs - elapsed);
+    if (wait > 0 && !removeTimer) {
+      removeTimer = setTimeout(function () {
+        removeTimer = null;
+        if (loadingRemoved) return;
+        loadingRemoved = true;
+        document.documentElement.classList.remove('loading');
+      }, wait);
+      return;
+    }
+    if (removeTimer) {
+      clearTimeout(removeTimer);
+      removeTimer = null;
+    }
     loadingRemoved = true;
     document.documentElement.classList.remove('loading');
+  }
+
+  function tryRemoveLoading() {
+    if (pageLoaded) removeLoading();
   }
 
   function init() {
@@ -15,22 +39,31 @@
       var base = window.location.href.replace(/[^/]+$/, '') || './';
       loadComponent('navbar', base + 'navbar.html', function () {
         setupNavbarFunctionality();
-        removeLoading();
-      }, removeLoading);
+        tryRemoveLoading();
+      }, function () { tryRemoveLoading(); });
       loadComponent('footer', base + 'footer.html');
     } else {
-      removeLoading();
+      tryRemoveLoading();
     }
     setupHistoryNavigation();
-    setTimeout(removeLoading, 400);
   }
+
+  window.addEventListener('load', function () {
+    pageLoaded = true;
+    removeLoading();
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
-  window.addEventListener('load', removeLoading);
+  setTimeout(function () {
+    if (!loadingRemoved) {
+      pageLoaded = true;
+      removeLoading();
+    }
+  }, 8000);
 })();
 
 function loadComponent(id, url, callback, onError) {

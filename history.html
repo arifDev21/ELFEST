@@ -4,6 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html.loading body {
+      background: #0c0c10 !important;
+    }
+  </style>
   <title>ELFEST - History</title>
   <script src="https://cdn.tailwindcss.com" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +18,11 @@
     rel="stylesheet">
   <link rel="stylesheet" href="components.css" />
   <style>
-    html, body { overflow-x: hidden; max-width: 100%; }
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
 
     .body {
       font-family: "Inter", sans-serif;
@@ -23,7 +32,7 @@
   </style>
 </head>
 
-  <body class="bg-[#2D1291] overflow-x-hidden min-h-screen flex flex-col max-w-full">
+<body class="bg-[#2D1291] overflow-x-hidden min-h-screen flex flex-col max-w-full">
   <script src="components.js"></script>
   <div class="relative flex-1 w-full max-w-full overflow-x-hidden">
     <img src="./assets/explore/background.webp" class="absolute inset-0 w-full h-full object-cover min-h-full"
