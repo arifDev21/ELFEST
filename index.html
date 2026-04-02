@@ -20,6 +20,43 @@
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+  <link rel="preload" as="image" href="/assets/home/elfest-vol-3/Story%20flyer%201.svg" fetchpriority="high" />
+  <script>
+    // True lazy-load: keep above-the-fold eager, move others to data-src before they start downloading.
+    (function () {
+      const PLACEHOLDER =
+        'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221%22 height=%221%22/%3E';
+      const shouldEager = (img) =>
+        img.hasAttribute('data-eager') ||
+        img.getAttribute('fetchpriority') === 'high' ||
+        (img.getAttribute('src') || '').includes('assets/others/');
+      const prepare = (img) => {
+        if (!(img instanceof HTMLImageElement)) return;
+        const src = img.getAttribute('src');
+        if (!src || src.startsWith('data:')) return;
+        if (shouldEager(img)) return;
+        if (!img.classList.contains('lozad')) img.classList.add('lozad');
+        if (!img.getAttribute('data-src')) img.setAttribute('data-src', src);
+        img.setAttribute('src', PLACEHOLDER);
+        if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
+        if (!img.getAttribute('decoding')) img.setAttribute('decoding', 'async');
+        if (!img.getAttribute('fetchpriority')) img.setAttribute('fetchpriority', 'low');
+      };
+
+      // MutationObserver to catch images as they are parsed.
+      const mo = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const node of m.addedNodes) {
+            if (node && node.tagName === 'IMG') prepare(node);
+            if (node && node.querySelectorAll) node.querySelectorAll('img').forEach(prepare);
+          }
+        }
+      });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+      // Also handle anything already in the DOM.
+      document.addEventListener('DOMContentLoaded', () => document.querySelectorAll('img').forEach(prepare));
+    })();
+  </script>
   <link rel="stylesheet" href="flip.min.css" />
   <link rel="stylesheet" href="components.css" />
 

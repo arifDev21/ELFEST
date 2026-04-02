@@ -41,12 +41,6 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
 (function () {
   function initLozad() {
     if (typeof window.lozad !== 'function') return;
-    var imgs = document.querySelectorAll('img[src]');
-    for (var i = 0; i < imgs.length; i++) {
-      var img = imgs[i];
-      if (!img.classList.contains('lozad')) img.classList.add('lozad');
-      if (!img.getAttribute('data-src')) img.setAttribute('data-src', img.getAttribute('src'));
-    }
     var observer = window.lozad('.lozad', { rootMargin: '200px 0px', threshold: 0.1 });
     observer.observe();
   }
