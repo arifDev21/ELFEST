@@ -40,9 +40,40 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
 /* lozad.js – observe images near viewport */
 (function () {
   function initLozad() {
-    if (typeof window.lozad !== 'function') return;
+    // If lozad isn't available, fallback: reveal images that were moved to data-src.
+    if (typeof window.lozad !== 'function') {
+      try {
+        var fallbackImgs = document.querySelectorAll('img[data-src]');
+        for (var i = 0; i < fallbackImgs.length; i++) {
+          var im = fallbackImgs[i];
+          if (im.getAttribute('src') && im.getAttribute('src').indexOf('data:image/svg+xml') === 0) {
+            im.setAttribute('src', im.getAttribute('data-src'));
+          }
+        }
+      } catch (e) {}
+      return;
+    }
+
     var observer = window.lozad('.lozad', { rootMargin: '200px 0px', threshold: 0.1 });
-    observer.observe();
+    window.__elfestLozadObserver = observer;
+
+    var raf = 0;
+    function refresh() {
+      if (!observer) return;
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        raf = 0;
+        try { observer.observe(); } catch (e) {}
+      });
+    }
+    window.elfestLozadRefresh = refresh;
+
+    // Observe current + future nodes (navbar/footer injected later, etc.)
+    refresh();
+    try {
+      var mo = new MutationObserver(function () { refresh(); });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+    } catch (e) {}
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initLozad);
