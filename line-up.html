@@ -273,11 +273,33 @@
     .line-up-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        position: relative;
+    }
+
+    /* Biar border/ring putih selalu di atas isi grid (termasuk image yang overflow) */
+    .line-up-grid::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 5;
+        box-shadow: 0 0 0 2px #fff;
+    }
+
+    @media (min-width: 768px) {
+        .line-up-grid::after {
+            box-shadow: 0 0 0 4px #fff;
+        }
+    }
+
+    .line-up-grid>* {
+        position: relative;
+        z-index: 1;
     }
 
     @media (max-width: 479px) {
         .line-up-grid {
-            grid-template-rows: 70px minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) auto;
+            grid-template-rows: 70px minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) auto;
             gap: 4px;
         }
 
@@ -292,7 +314,7 @@
 
     @media (min-width: 480px) and (max-width: 767px) {
         .line-up-grid {
-            grid-template-rows: 100px minmax(160px, 1fr) minmax(160px, 1fr) minmax(160px, 1fr) auto;
+            grid-template-rows: 100px minmax(160px, 1fr) minmax(160px, 1fr) minmax(160px, 1fr) minmax(160px, 1fr) auto;
             gap: 6px;
         }
 
@@ -307,7 +329,7 @@
 
     @media (min-width: 768px) and (max-width: 1023px) {
         .line-up-grid {
-            grid-template-rows: 120px minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) auto;
+            grid-template-rows: 120px minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) auto;
             gap: 8px;
         }
 
@@ -322,7 +344,7 @@
 
     @media (min-width: 1024px) {
         .line-up-grid {
-            grid-template-rows: 141px 279px 284px 284px auto;
+            grid-template-rows: 141px 279px 284px 284px 284px auto;
             gap: 8px;
         }
 
@@ -484,27 +506,144 @@
         <!-- Container Day 1 + Day 2 dengan gap -->
         <div class="relative left-0 right-0 flex flex-col items-center gap-8 md:gap-16 pb-8 md:pb-16  md:px-0">
             <!-- Day 1 - 25 April (CSS Grid, mudah di-maintain) -->
-            <section class="line-up-section w-full" aria-label="Day 1 - 25 April">
-                <div
-                    class="w-full grid grid-cols-[1fr_64px] sm:grid-cols-[1fr_96px] md:grid-cols-[1fr_160px] items-center gap-0">
-                    <img class="w-full h-auto object-contain" src="assets/lineup/line-up-day-1.svg"
-                        alt="Day 1 - 25 April" />
-                    <img class="pointer-events-none select-none w-full h-auto object-contain"
-                        src="assets/lineup/right-asset-day-1.svg" alt="" aria-hidden="true" />
-                </div>
-            </section>
+            <!-- Container Day 1 + Day 2 dengan gap -->
+            <div class="relative left-0 right-0 flex flex-col items-center gap-8 md:gap-16 pb-8 md:pb-16  md:px-0">
+                <!-- Day 1 - 25 April (CSS Grid, mudah di-maintain) -->
+                <section class="line-up-section flex justify-center w-full" aria-label="Day 1 - 25 April">
+                    <div class="w-full max-w-[1214px] p-4 md:p-8 box-border">
+                        <div class="line-up-grid w-full max-w-[1150px] mx-auto bg-white overflow-hidden shadow-2xl">
+                            <!-- Header -->
+                            <div class="col-span-2 flex items-center justify-center bg-white">
+                                <img class="line-up-header-img max-h-full w-auto object-contain"
+                                    src="assets/lineup/Salinan dari Story flyer (25) 1.svg"
+                                    alt="Day 1 - Sabtu 25 April 2026" />
+                            </div>
+                            <!-- Row 1: Banda Neira | HIVI! -->
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-visible bg-[#f176b0] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/3f49JTIdjQTVVx2Y6ifVLc"
+                                data-artist="Banda Neira">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-contain translate-y-1 md:translate-y-2"
+                                    src="assets/lineup/Salinan dari Story flyer (30) 1.svg" alt="Banda Neira" />
+                            </div>
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#8281fb] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/4ubEZ6sMsrrbQChueyouCC"
+                                data-artist="HIVI!">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/Salinan dari Story flyer (31) 1.svg" alt="HIVI!" />
+                            </div>
+                            <!-- Row 2: Nadin Amizah | NDX AKA -->
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#8281fb] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/20zafXaLhm5IcXnSU93rNn"
+                                data-artist="Nadin Amizah">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover translate-y-1 md:translate-y-0"
+                                    src="assets/lineup/Salinan dari Story flyer (32) 1.svg" alt="Nadin Amizah" />
+                            </div>
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#f9c74f] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/1IDBhlpDyKr53UKKxXRHXD"
+                                data-artist="NDX AKA">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/Salinan dari Story flyer (33) 1.svg" alt="NDX AKA" />
+                            </div>
+                            <!-- Row 3: The Changcuters | Mahalini -->
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-visible bg-[#f176b0] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/1DZs8IjMvRQqB3i0uvgCc5"
+                                data-artist="The Changcuters">
+                                <img class="line-up-cell-img line-up-cell-img-full absolute inset-0 w-full h-full object-cover translate-y-1 md:translate-y-3"
+                                    src="assets/lineup/changcuters.svg" alt="The Changcuters" />
+                            </div>
+                            <div class="line-up-cell relative overflow-hidden bg-[#8281fb]">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/mahalini.svg" alt="Mahalini" />
+                            </div>
+
+                            <!-- Row 4: Rumahsakit | Kunto Aji -->
+                            <div class="line-up-cell relative overflow-hidden bg-[#f9c74f]">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-contain md:translate-y-4"
+                                    src="assets/lineup/rumahsakit.svg" alt="Rumahsakit" />
+                            </div>
+                            <div class="line-up-cell relative overflow-hidden bg-[#f176b0]">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/kuntoAji.svg" alt="Kunto Aji" />
+                            </div>
+                            <!-- Footer: Dan masih banyak... -->
+                            <!-- <div class="col-span-2 flex items-center justify-center bg-white h-fit min-h-0">
+                                <img class="line-up-footer-img w-full h-auto max-h-none object-contain"
+                                    src="assets/lineup/Salinan dari Story flyer (25) 2.svg"
+                                    alt="Dan masih banyak artis lainnya - Line up Day 1" />
+                            </div> -->
+                        </div>
+                    </div>
+                </section>
 
 
-            <!-- Day 2 - CSS Grid (beda ring, gap dari container) -->
-            <section class="line-up-section w-full" aria-label="Day 2">
-                <div
-                    class="w-full grid grid-cols-[64px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[160px_1fr] items-center gap-0">
-                    <img class="pointer-events-none select-none w-full h-auto object-contain"
-                        src="assets/lineup/left-asset-day-2.svg" alt="" aria-hidden="true" />
-                    <img class="w-full h-auto object-contain" src="assets/lineup/line-up-day-2.svg"
-                        alt="Day 2 - 26 April" />
-                </div>
-            </section>
+                <!-- Day 2 - CSS Grid (beda ring, gap dari container) -->
+                <section class="line-up-section flex justify-center w-full" aria-label="Day 2">
+                    <div class="w-full max-w-[1214px] p-4 md:p-8 box-border">
+                        <div class="line-up-grid w-full max-w-[1150px] mx-auto bg-white overflow-hidden shadow-2xl">
+                            <!-- Header -->
+                            <div class="col-span-2 flex items-center justify-center bg-white">
+                                <img class="line-up-header-img max-h-full w-auto object-contain"
+                                    src="assets/lineup/Day2.svg" alt="Day 2 - Minggu 26 April 2026" />
+                            </div>
+                            <!-- Row 1: Alkateri | For Revenge -->
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#f9c74f] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/2FBPSDAcymnyELCoVKgTcf"
+                                data-artist="Alkateri">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/Salinan dari Story flyer (35) 1.svg" alt="Alkateri" />
+                            </div>
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#8281fb] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/0f6TyESD8E1mD2oLJ4TGv1"
+                                data-artist="For Revenge">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/Salinan dari Story flyer (36) 1.svg" alt="For Revenge" />
+                            </div>
+                            <!-- Row 2: Lomba Sihir | Perunggu -->
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#8281fb] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/6wD3vtAV0P3gWB9zLs7I4j"
+                                data-artist="Lomba Sihir">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/Salinan dari Story flyer (37) 1.svg" alt="Lomba Sihir" />
+                            </div>
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#f176b0] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/0NbKRRBuiIUwS9irPvi7wD"
+                                data-artist="Perunggu">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover translate-y-1 md:translate-y-0 xl:translate-y-3"
+                                    src="assets/lineup/Salinan dari Story flyer (38) 1.svg" alt="Perunggu" />
+                            </div>
+                            <!-- Row 3: Rebellion Rose | Feast -->
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#f9c74f] cursor-pointer"
+                                data-spotify="https://open.spotify.com/embed/artist/0AnwMwgg6y4Cv0h9nkKPIx"
+                                data-artist="Rebellion Rose">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-contain object-center"
+                                    src="assets/lineup/rebelions.svg" alt="Rebellion Rose" />
+                            </div>
+                            <div class="line-up-cell lineup-cell-clickable relative overflow-hidden bg-[#8281fb] cursor-pointer"
+                                data-artist="Feast">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover object-center"
+                                    src="assets/lineup/feast.svg" alt="Feast" />
+                            </div>
+                            <!-- Row 4: Hindia | Kale -->
+                            <div class="line-up-cell relative overflow-hidden bg-[#f176b0]">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/hindia.svg" alt="Hindia" />
+                            </div>
+                            <div class="line-up-cell relative overflow-hidden bg-[#f9c74f]">
+                                <img class="line-up-cell-img absolute inset-0 w-full h-full object-cover"
+                                    src="assets/lineup/kale.svg" alt="Kale" />
+                            </div>
+                            <!-- Footer: Dan masih banyak... -->
+                            <!-- <div class="col-span-2 flex items-center justify-center bg-white h-fit min-h-0">
+                                <img class="line-up-footer-img w-full h-auto max-h-none object-contain"
+                                    src="assets/lineup/dan masih banyak lagi.svg"
+                                    alt="Dan masih banyak artis lainnya - Line up Day 2" />
+                            </div> -->
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
 
         </div>
 
