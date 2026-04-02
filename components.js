@@ -77,18 +77,25 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
 
     // Safety net: if anything is still placeholder after a bit, reveal it.
     // Prevents "all images blank" when CDN/observer fails in production.
-    setTimeout(function () {
+    function revealStuck() {
       try {
         var stuck = document.querySelectorAll('img[data-src]');
         for (var i = 0; i < stuck.length; i++) {
           var im2 = stuck[i];
           var s2 = im2.getAttribute('src') || '';
-          if (s2.indexOf('data:image/svg+xml') === 0) {
+          var isPlaceholder = s2.indexOf('data:image/svg+xml') === 0;
+          var isBroken = im2.complete && im2.naturalWidth === 0;
+          if (isPlaceholder || isBroken) {
             im2.setAttribute('src', im2.getAttribute('data-src'));
           }
         }
       } catch (e) {}
-    }, 2500);
+    }
+
+    // Safety net: reveal after a bit, and re-check a few times.
+    setTimeout(revealStuck, 2500);
+    setTimeout(revealStuck, 5000);
+    setTimeout(revealStuck, 9000);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initLozad);

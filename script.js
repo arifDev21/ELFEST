@@ -32,7 +32,15 @@
 
   function init() {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+      // Disable SW + clear old caches (fix stale prod issues)
+      navigator.serviceWorker.getRegistrations().then(function (regs) {
+        regs.forEach(function (r) { r.unregister().catch(function () {}); });
+      }).catch(function () {});
+      if (window.caches && typeof window.caches.keys === 'function') {
+        window.caches.keys().then(function (keys) {
+          keys.forEach(function (k) { window.caches.delete(k).catch(function () {}); });
+        }).catch(function () {});
+      }
     }
     var navbarEl = document.getElementById('navbar');
     if (navbarEl) {
