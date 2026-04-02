@@ -74,6 +74,21 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
       var mo = new MutationObserver(function () { refresh(); });
       mo.observe(document.documentElement, { childList: true, subtree: true });
     } catch (e) {}
+
+    // Safety net: if anything is still placeholder after a bit, reveal it.
+    // Prevents "all images blank" when CDN/observer fails in production.
+    setTimeout(function () {
+      try {
+        var stuck = document.querySelectorAll('img[data-src]');
+        for (var i = 0; i < stuck.length; i++) {
+          var im2 = stuck[i];
+          var s2 = im2.getAttribute('src') || '';
+          if (s2.indexOf('data:image/svg+xml') === 0) {
+            im2.setAttribute('src', im2.getAttribute('data-src'));
+          }
+        }
+      } catch (e) {}
+    }, 2500);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initLozad);
