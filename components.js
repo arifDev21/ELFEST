@@ -39,6 +39,39 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
 
 /* lozad.js – safe mode (does NOT replace src) */
 (function () {
+  function supportsWebp(cb) {
+    try {
+      var img = new Image();
+      img.onload = function () { cb(img.width === 1); };
+      img.onerror = function () { cb(false); };
+      img.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4TAYAAAAvAAAAAAfQ//73v/+BiOh/AAA='; // 1px
+    } catch (e) { cb(false); }
+  }
+
+  function trySwapToWebp() {
+    supportsWebp(function (ok) {
+      if (!ok) return;
+      try {
+        var imgs = document.querySelectorAll('img[src$=\".svg\"]');
+        for (var i = 0; i < imgs.length; i++) {
+          var el = imgs[i];
+          if (el.hasAttribute('data-no-webp')) continue;
+          var src = el.getAttribute('src');
+          if (!src) continue;
+          var webp = src.replace(/\\.svg(\\?.*)?$/, '.webp$1');
+          if (webp === src) continue;
+          // Swap optimistically; revert if webp doesn't exist
+          (function (imgEl, orig, next) {
+            var test = new Image();
+            test.onload = function () { imgEl.setAttribute('src', next); };
+            test.onerror = function () { /* keep svg */ };
+            test.src = next;
+          })(el, src, webp);
+        }
+      } catch (e) {}
+    });
+  }
+
   function safeEnhanceImages() {
     try {
       var imgs = document.querySelectorAll('img[src]');
@@ -63,6 +96,7 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
   }
 
   function initLozad() {
+    trySwapToWebp();
     safeEnhanceImages();
     if (typeof window.lozad !== 'function') return;
     var observer = window.lozad('.lozad', { rootMargin: '200px 0px', threshold: 0.1 });
@@ -71,6 +105,7 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
     // Re-observe when navbar/footer/components are injected later.
     try {
       var mo = new MutationObserver(function () {
+        trySwapToWebp();
         safeEnhanceImages();
         try { observer.observe(); } catch (e) {}
       });

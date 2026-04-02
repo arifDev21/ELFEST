@@ -16,7 +16,11 @@
   <link rel="stylesheet" href="components.css" />
   <style>
     .background-base {
-      background-image: url("assets/about/2026/background.png");
+      background-image: url("assets/about/2026/background.webp");
+      background-image: image-set(
+        url("assets/about/2026/background.webp") type("image/webp"),
+        url("assets/about/2026/background.png") type("image/png")
+      );
       background-size: cover;
     }
 

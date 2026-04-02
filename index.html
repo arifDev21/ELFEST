@@ -34,7 +34,11 @@
     }
 
     .bg-hero {
-      background-image: url("/assets/home/elfest-vol-3/Story%20flyer%201.svg");
+      background-image: url("/assets/home/elfest-vol-3/Story%20flyer%201.webp");
+      background-image: image-set(
+        url("/assets/home/elfest-vol-3/Story%20flyer%201.webp") type("image/webp"),
+        url("/assets/home/elfest-vol-3/Story%20flyer%201.svg") type("image/svg+xml")
+      );
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
