@@ -37,4 +37,50 @@ var GA_MEASUREMENT_ID = 'G-ZTZ70H3129';
   }
 })();
 
-// Note: lozad/true-lazy removed (it caused images to disappear in production).
+/* lozad.js – safe mode (does NOT replace src) */
+(function () {
+  function safeEnhanceImages() {
+    try {
+      var imgs = document.querySelectorAll('img[src]');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        var src = img.getAttribute('src');
+        if (!src || src.indexOf('data:') === 0) continue;
+
+        // Keep above-the-fold/critical images as-is
+        var isEager = img.hasAttribute('data-eager') || img.getAttribute('fetchpriority') === 'high';
+        if (!isEager) {
+          if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
+          if (!img.getAttribute('decoding')) img.setAttribute('decoding', 'async');
+          if (!img.getAttribute('fetchpriority')) img.setAttribute('fetchpriority', 'low');
+        }
+
+        // Lozad expects data-src. We set it but DO NOT remove src.
+        if (!img.classList.contains('lozad')) img.classList.add('lozad');
+        if (!img.getAttribute('data-src')) img.setAttribute('data-src', src);
+      }
+    } catch (e) {}
+  }
+
+  function initLozad() {
+    safeEnhanceImages();
+    if (typeof window.lozad !== 'function') return;
+    var observer = window.lozad('.lozad', { rootMargin: '200px 0px', threshold: 0.1 });
+    observer.observe();
+
+    // Re-observe when navbar/footer/components are injected later.
+    try {
+      var mo = new MutationObserver(function () {
+        safeEnhanceImages();
+        try { observer.observe(); } catch (e) {}
+      });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+    } catch (e) {}
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLozad);
+  } else {
+    initLozad();
+  }
+})();
