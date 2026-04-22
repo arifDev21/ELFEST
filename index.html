@@ -35,10 +35,8 @@
 
     .bg-hero {
       background-image: url("/assets/home/elfest-vol-3/Story%20flyer%201.webp");
-      background-image: image-set(
-        url("/assets/home/elfest-vol-3/Story%20flyer%201.webp") type("image/webp"),
-        url("/assets/home/elfest-vol-3/Story%20flyer%201.svg") type("image/svg+xml")
-      );
+      background-image: image-set(url("/assets/home/elfest-vol-3/Story%20flyer%201.webp") type("image/webp"),
+          url("/assets/home/elfest-vol-3/Story%20flyer%201.svg") type("image/svg+xml"));
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -177,9 +175,14 @@
       <img loading="lazy"
         class="w-full max-w-[480px] sm:max-w-[560px] md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1040px] h-auto object-contain"
         src="assets/home/elfest-vol-3/sponsor-by.svg" alt="Sponsor By" />
-      <img loading="lazy"
-        class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1040px] h-auto object-contain"
-        src="assets/home/elfest-vol-3/brand-sponsor.svg" alt="Brand Sponsor" />
+
+
+      <div class="bg-white p-10 rounded-lg shadow-lg p-3 md:p-0">
+        <img loading="lazy"
+          class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1040px] h-auto object-contain"
+          src="assets/home/elfest-vol-3/new-sponsor.png" alt="Brand Sponsor" />
+      </div>
+
     </div>
 
     <!-- 8+10+15. Feed 3 + Story 10 + Story Flyer 7: mobile absolute [kiri][tengah][kanan], desktop grid 3 kolom -->
@@ -223,7 +226,7 @@
       <div
         class="w-full max-w-xs sm:max-w-sm aspect-video overflow-hidden mx-auto md:max-w-none md:w-full md:mx-0 md:min-h-0">
         <video class="block w-full h-full aspect-video object-cover object-center" autoplay muted loop playsinline
-          controls preload="metadata" poster="assets/home/elfest-vol-3/Group 24.svg">
+          controls preload="metadata" poster="assets/home/elfest-vol-3/Group 29.svg">
           <source src="assets/afterMovie/afterMovie Elfest2025.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -251,7 +254,7 @@
       <div
         class="w-full max-w-xs sm:max-w-sm aspect-video overflow-hidden mx-auto md:max-w-none md:w-full md:mx-0 md:min-h-0">
         <video class="w-full h-full object-cover object-center" autoplay muted loop playsinline controls
-          preload="metadata" poster="assets/home/elfest-vol-3/Rectangle 20.svg">
+          preload="metadata" poster="assets/home/elfest-vol-3/Group 29.svg">
           <source src="assets/afterMovie/afterMovie Elfest2024.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
